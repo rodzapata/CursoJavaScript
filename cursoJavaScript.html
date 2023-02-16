@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Java script</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <script>
+        var hola = "hola mundo";
+        let mensaje = new String("Hola mundo objeto");
+        console.log(hola);
+        console.log(mensaje);
+        console.log("cantidad de letras en la variable mensaje: " + mensaje.length);
+        console.log("todo en mayuscula : " + mensaje.toUpperCase());
+
+        setenseEnglish = "learn english and Javascrip too"
+        arreglo = setenseEnglish.split(" ")
+        console.log(setenseEnglish.split(" "));
+        console.log(arreglo);
+
+        //Concatenando variables
+        let name = "rodney";
+        let lastName = "zapata";
+        let greeting = "wellconme, mi nombre es : " + name + " " + lastName;
+        console.log(greeting);
+
+        //interpolacion de variables 
+        //usando templete string
+        
+        let saludo2 =`Hola, mi nombre es ${name} ${lastName}`;
+        console.log(saludo2);
+
+        let nodoUL="<ul> <li>Invierno</li> <li>Verano</li>  <li>Primavera</li>  </ul>"
+        let season1="invierno";
+        let season2="verano";
+        let season3="primavera";
+        
+        console.log("----interpolando dentro de un codigo HTML ----")
+        let nodoUl2=
+        `<ul>
+            <li>${season1}</li>
+            <li>${season2}</li>
+            <li>${season3}</li>
+        </ul>`;
+
+        console.log(nodoUl2);
+
+        let a=5;
+        let b=6.48;
+        let c=a+b;
+
+        console.log(a,b);
+        console.log(c);
+
+        //si el valor est guardado como caracter hay que convertirlo a numero
+        d="10.65"
+        console.log(a+d);
+        console.log(a+parseInt(b));
+        console.log(a+b.toFixed(1));
+   
+        //tipo de dato
+        console.log(typeof a);
+        console.log(typeof b);
+        console.log(typeof d);
+
+        //numeros boleanos
+        let verdadero=true;
+        let falso=false
+        console.log(verdadero, falso);
+        console.log(typeof verdadero);
+
+        //los numeros -negativos y positivos son verdaderos y  el cero es falso
+        let negativo=-2;
+        let cero=0;
+        let positivo=5;
+        console.log("cero: "+Boolean(cero));
+        console.log("negativo: "+Boolean(negativo));
+        console.log("positivo: "+Boolean(positivo));
+        console.log(typeof negativo, typeof positivo);
+        console.log(negativo, positivo);
+        console.log("cadena vacia: "+Boolean(""));
+        console.log("cadena con un espacio: "+Boolean(" "));
+        console.log("cadena con un punto: "+Boolean("."));
+
+        //variables infefinida
+        let indefinida;
+        //variable null
+        let nulo=null
+        console.log("variable indefinida "+indefinida);
+        console.log("variable nullas "+nulo);
+
+        //valor NaN no es un numero
+        let noEsUnNumero="hola"*3;
+        console.log(noEsUnNumero);
+
+        //funciones
+        function saludar(nombre, edad){
+            console.log(`mi nombre es ${nombre} y tengo ${edad} años `)
+        }
+
+        //invocamos la funcion
+//        saludar("rodney zapata",47);
+        saludar();
+
+
+        //funcion expresada o anonima
+        const funcionExpresion=function(){
+            console.log("funcion anonima, no se conoce el nombre de la funcion ni el valor de las variables");
+        }
+
+        //invocamos la funcion
+        funcionExpresion();
+
+        //array
+        const pruebaArray=[15,"hola",true,["A","B","C"]];
+        console.log(pruebaArray);
+
+        //vemos elementos del array
+        console.log(pruebaArray[1]) //nos muestra el elemnto Hola
+        console.log(pruebaArray[3][1]) //nos muestra el elemento dentro de otro vector osea la letra B
+
+        //array a partir del 2015
+        const pruebaArray2=Array.of(17,"wellcome");
+        console.log(pruebaArray2);  
+
+        //tambien se puede crear usando la POO
+        const objArray= new Array(1,2,"hola");
+        console.log(objArray);
+
+        //tambien se puede definir un array de 100 elementos que se llene automaticamente con el valor predeterminado false
+        const dArray= new Array(100).fill(false);
+        console.log(dArray);    
+
+        //array de cololres
+        const colores= new Array("Amarillo","azul","rojo");
+        console.log(colores);
+        
+        //agregamos el color verde
+        colores.push("verde");
+        console.log(colores);
+
+        //quita el ultimo elemento del array, quedando el array como estaba inicialmente
+        colores.pop();
+        console.log(colores);
+
+        //ciclo FOR dentro una funcion asincronica
+        colores.forEach(function(el,index){
+         console.log(`<li id="${index}">${el}</li>`);
+        });
+
+        //Objeto cadena de caracter
+        const palabra= new String("cadena de datos");
+        console.log(palabra);
+
+        //Objetos en java script
+        const obj=new Object();
+        console.log(obj);
+      
+        //objeto usuario
+        const usuario={
+            nombre:"Rodney",
+            apellido:"zapata",
+            direccion:"kra 5B No. 56c-93",
+            edad:47,
+            pasaTiempo:["Leer","programar","enseñar"],
+            soletero:false,
+            contacto:{
+                email:"rzapata@serviparamo.com.co",
+                telefono:"3103724590"
+            },
+            saludar:function(){
+                console.log(`Hola`);
+            },
+            decirnombre:function(){
+                console.log(`mi nombre es ${this.nombre}`)
+            }
+        }
+
+        console.log(usuario);
+        console.log(usuario["nombre"]);
+
+        //tambien se puede llamar la propiedad de un objeto utilizando el punto
+        console.log(usuario.apellido);
+        console.log(usuario.saludar());
+
+        //llamamos a la funcion saludar que está dentro del objeto Usuario
+        usuario.saludar();  
+        usuario.decirnombre();
+
+        //nombre de los atributos y valor almacenado
+        console.log(Object.keys(usuario));
+        console.log(Object.values(usuario));
+        
+        //funcion
+        const saludar2=function(){
+            console.log(`Hola dentro de un objeto`);
+        }
+
+        saludar2();
+        
+</script>
+    <!-- <li id="$(index)">$(el)</li> -->
+    <h1>Curso de Java Script</h1>
+    <h2>Indice Tematico</h2>
+    <ul>
+        <li><a href="cursoJavaScript.html#referencia">Referencias</a></li>
+        <li><a href="cursoJavaScript.html#variables">Variables</a></li>
+        <li><a href="cursoJavaScript.html#concatenacion">Concatenacion e interpolacion</a></li>
+        <li><a href="cursoJavaScript.html#numeros">varibles numericas</a></li>
+        <li><a href="cursoJavaScript.html#bolean">valores boleanos</a></li>
+        <li><a href="cursoJavaScript.html#nulos">valores nulos</a></li>
+        <li><a href="cursoJavaScript.html#compuesto">Datos compuesto</a></li>
+    </ul>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="referencia">Referencias</h2>
+    <article>
+        esta pagina es importantes para seguir paso a paso el curso :
+        <a href="https://www.youtube.com/watch?v=tmRa0_EvMoc&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA&index=4">Curso de
+            JavaScript por Jonathan Mircha</a> <br>
+        Extensiones recomendadas que se deben instalar en visual code, para trabajar con JavaScript:
+        ESLint nos da utocompletado y nos guia con mensajes de error desde la consola, Ptettier para formatear documento
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="Variables">Variables</h2>
+    <article>
+        esta pagina es importantes para seguir paso a paso el curso :
+        para definir las variables se recomienda utilizar <strong>let</strong> y dejar de utilizar <strong>var</strong>,
+        porque si se defines con <br>
+        <strong>var</strong>, las varibles quedan como globales y por motivo de seguridad no se recomienda. <br><br>
+        las variables tipo <strong>string</strong>, se pueden definir de la siguiente forma: <br>
+        <pre>
+        <code>
+            let pais="Colombia"; 
+            let ciudad='Barranquilla';
+
+            let mensaje=new String("Hola mundo");
+            console.log(mensaje);
+            console.log("todo en mayuscula : "+mensaje.toUpperCase());
+
+        </code>
+     </pre>
+        Tambien podemos convertir una frase en un arreglo, por ejemplo la palabra que contega el contenido "learn
+        englihs and Javascrip too" <br>
+        donde el separador de cada posicion del arreglo será el espacio en blanco, quedando de la siguiente forma: <br>
+        <pre>
+        <code>
+            setenseEnglish="learn english and Javascrip too"
+            arreglo=setenseEnglish.split(" ")
+            console.log(setenseEnglish.split(" "));
+            console.log(arreglo);
+    
+        </code>
+     </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="Concatenacion">Concatenacion e interpolacion de String</h2>
+    <article>
+        a partir del 2015 se incluyó algo llamamo <strong>template String</strong>, esto nos permite meter el valor
+        de una variable dentro de otra variable, esto seria una gran mejora que evita el uso de concatenar variables.
+        <br>
+        <pre>
+            <code>
+                //Concatenando variables
+                let name="rodney";
+                let lastName="zapata";
+                let greeting= "wellconme, mi nombre es : "+name+" "+lastName;
+                console.log(greeting);
+
+                //interpolacion de variables 
+                //usando templete string
+                let saludo2 =`Hola, mi nombre es ${name} ${lastName}`;
+                console.log(saludo2);
+        
+                let nodoUL="<ul> <li>Invierno</li> <li>Verano</li>  <li>Primavera</li>  </ul>"
+                let season1="invierno";
+                let season2="verano";
+                let season3="primavera";
+                
+                console.log("----interpolando dentro de un codigo HTML ----")
+                let nodoUl2=
+                `<ul>
+                    <li>${season1}</li>
+                    <li>${season2}</li>
+                    <li>${season3}</li>
+                </ul>`;
+        
+                console.log(nodoUl2);
+                
+            </code>
+        </pre>
+    </article>
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="numeros">variables numericas</h2>
+    <article>
+        en JavaScript los numeros son numero, no importa si tienen parte decimal o sin son enteros. <br>
+        <pre>
+            <code>
+                let a=5;
+                let b=6.48;
+                let c=a+b;
+        
+                console.log(a,b);
+                console.log(c);
+        
+                //si el valor est guardado como caracter hay que convertirlo a numero
+                d="10.65"
+                console.log(a+d);
+                console.log(a+parseInt(b));
+                console.log(a+b.toFixed(1));
+
+                //tipo de dato
+                console.log(typeof a);
+                console.log(typeof b);
+                console.log(typeof d);
+                        
+            </code>
+        </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="bolean">valores boleanos </h2>
+    <article>
+        son valores de verdadero o falso, por ejemplo : <br>
+        <pre>
+            <code>
+                //numeros boleanos
+                let verdadero=true;
+                let falso=false
+                console.log(verdadero, falso);
+                console.log(typeof verdadero);
+        
+                //los numeros -negativos y positivos son verdaderos y  el cero es falso
+                let negativo=-2;
+                let cero=0;
+                let positivo=5;
+                console.log("cero: "+Boolean(cero));
+                console.log("negativo: "+Boolean(negativo));
+                console.log("positivo: "+Boolean(positivo));
+                console.log(typeof negativo, typeof positivo);
+                console.log(negativo, positivo);
+                console.log("cadena vacia: "+Boolean(""));
+                console.log("cadena con un espacio: "+Boolean(" "));
+                console.log("cadena con un punto: "+Boolean("."));
+      
+            </code>
+        </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="nulos">valores nulos </h2>
+    <article>
+        en Javascript existe una diferencia entre variables <strong>undefined</strong> y variables <strong>null</strong>, la primera <br>
+        es cuando se crea la variable pero no se ha inicializado entonces Javascrit le asigna como valor <strong>indefinido</strong>, la <br>
+        segunda es cuando el programador quiere hacer enfasis que ahun no le asignado ningun valor <strong>null</strong>. <br><br>
+        <pre>
+            <code>
+                //variables infefinida
+                let indefinida;
+                //variable null
+                let nulo=null
+                console.log("variable indefinida "+indefinida);
+                console.log("variable nullas "+nulo);
+      
+            </code>
+        </pre>
+        Tambien existe un tipo de datos <strong>NaN</strong>, que significa no es un numero
+        <pre>
+            <code>
+                //valor NaN no es un numero
+                let noEsUnNumero="hola"*3;
+                console.log(noEsUnNumero);
+        
+            </code>
+        </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="compuesto">Datos compuestos </h2>
+    <article>
+        Hasta el momento hemos utilizado datos primitivos: <strong>number, string, boolean, undefined, null</strong>. <br>
+        Ahora vamos a trabajar los datos compuestos: <strong>object={}, array=[], funcion(), class={}, etc</strong>. <br><br>
+
+        primero empezemos con las funciones, a las funciones se les puede pasar parametros , como en el siguiente ejemplo: <br>
+        <pre>
+            <code>
+                //definir funcion
+                function saludar(nombre, edad){
+                    console.log(`mi nombre es ${nombre} y tengo ${edad} años `)
+                }
+
+                //invocar a la funcion
+                saludar("Rodney Zapata",47);
+            </code>
+        </pre>
+        En el case que se invocar la funcion solamente sin pasarles parametros, entonces Javasript colocara los valores como <strong>indefinided</strong>,
+        Tambien se puede colocar valores por defectos a partir del 2015 y es de la siguiente forma:
+        <pre>
+            <code>
+                <code>
+                    //definir funcion con valores de parametros por defecto
+                    function saludar(nombre="", edad=0){
+                        console.log(`mi nombre es ${nombre} y tengo ${edad} años `)
+                    }
+    
+            </code>
+        </pre>   
+        existe otro tipo de funcion llamada anonima, donde es una funcion dinamica donde no se conoce el nombre de la funcion ni el valor de la variable. <br>
+        Tambien primero hay que definirla para despues ser invocadas en caso contrario genera error, en cambio las funciones anterior <strong>declarada</strong> 
+        pueden ser invocadas en cualquier parte del codigo inclusive antes de ser definida.<br><br>
+        <pre>
+            <code>
+                //funcion expresada o anonima
+                const funcionExpresion=function(){
+                    console.log("funcion anonima, no se conoce el nombre de la funcion ni el valor de las variables");
+                }
+        
+                //invocamos la funcion
+                funcionExpresion();
+        
+            </code>
+        </pre>    
+
+        <h3>Arrays</h3> 
+        los array se define entre corchetes [], y puedes contener elementos de distintos tipos como numeros, caracter, booleanos inclusive, <br>
+        pueden contener a su ves otro array, como se muesta a continuacion: <br> 
+        <pre>
+            <code>
+                //array
+                const pruebaArray=[15,"hola",true,["A","B","C"]];
+                console.log(pruebaArray);
+        
+                //vemos elementos del array
+                console.log(pruebaArray[1]) //nos muestra el elemnto Hola
+                console.log(pruebaArray[3][1]) //nos muestra el elemento dentro de otro vector osea la letra B
+            </code>
+        </pre>
+        a partir del 2015 se agregó que para definir un array se debe hacer de la suiguiente forma:
+        <pre>
+            <code>
+                //array a partir del 2015
+                const pruebaArray2=Array.of(17,"wellcome");
+                console.log(pruebaArray2);  
+        
+                //tambien se puede crear usando la POO
+                const objArray= new Array(1,2,"hola");
+                console.log(objArray);
+        
+                //tambien se puede definir un array de 100 elementos que se llene automaticamente con el valor predeterminado false
+                const dArray= new Array(100).fill(false);
+                console.log(dArray);    
+        
+                //array de cololres
+                const colores= new Array("Amarillo","azul","rojo");
+                console.log(colores);
+                
+                //agregamos el color verde
+                colores.push("verde");
+                console.log(colores);
+
+                //quita el ultimo elemento del array, quedando el array como estaba inicialmente
+                colores.pop();
+                console.log(colores);
+
+                //ciclo FOR dentro una funcion asincronica
+                colores.forEach(function(el,index){
+                 console.log(`<li id="${index}">${el}</li>`);
+                });
+            </code>
+        </pre>
+        <h3>Objetos</h3> 
+        se dice que en Javascrip todo es un objeto, si creamos una cadena de caracteres internamente es un objeto. <br>
+        notemos que tanto los objetos como las caracteres se identifica con <strong>{ }</strong>, como se muestra a continuacion: <br>
+        un objeto contienes diferentes tipos de datos, numero, caracteres, inclusive <strong>arrays</strong>  y hasta otros <strong>objetos</strong> . <br>
+        Hasta se puede que el campo llame una funcion. <br>
+        en POO a las varibles que estan dentro del objeto se le llama <strong>atributos / propiedades</strong> y las funciones se les llama, <br>
+        <strong>metodos</strong>
+        <pre>
+            <code>
+                //Objeto cadena de caracter
+                const palabra= new String("cadena de datos");
+                console.log(palabra);
+        
+                //Objetos en java script
+                const obj=new Object();
+                console.log(obj);
+              
+                //objeto usuario
+                const usuario={
+                    nombre:"Rodney",
+                    apellido:"zapata",
+                    direccion:"kra 5B No. 56c-93",
+                    edad:47,
+                    pasaTiempo:["Leer","programar","enseñar"],
+                    soletero:false,
+                    contacto:{
+                        email:"rzapata@serviparamo.com.co",
+                        telefono:"3103724590"
+                    },
+                    saludar:function(){
+                        console.log(`Hola`);
+                    },
+                    decirnombre:function(){
+                        console.log(`mi nombre es ${this.nombre}`)
+                    }
+                }
+        
+                console.log(usuario);
+                console.log(usuario["nombre"]);
+        
+                //tambien se puede llamar la propiedad de un objeto utilizando el punto
+                console.log(usuario.apellido);
+                console.log(usuario.saludar());
+        
+                //llamamos a la funcion saludar que está dentro del objeto Usuario
+                usuario.saludar();  
+                usuario.decirnombre();
+        
+                //nombre de los atributos y valor almacenado
+                console.log(Object.keys(usuario));
+                console.log(Object.values(usuario));
+                
+                //funcion
+                const saludar2=function(){
+                    console.log(`Hola dentro de un objeto`);
+                }
+        
+                saludar2();
+            </code>
+        </pre>
+    </article>
+
+    
+</body>
+
+</html>
