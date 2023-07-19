@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de interpolacion</title>
+</head>
+<body>
+    <h1>Interpolacion de prueba </h1>
+    <h2>Estaciones del año</h2>
+    <p id="parrafo1">
+        prueba de un parrafo
+    </p>
+    <ul id="EstacionInterpolacion">
+        <li>Invierno</li>
+        <li>Verano</li>
+        <li>primavera</li>
+        <li>Otoño</li>
+    </ul>
+
+    <h2>Escojer lenguaje de programacion</h2>
+    <select name="" id="">
+        <option value="">C#</option>
+        <option value="">JavaScript</option>
+        <option value="">Pyton</option>
+    </select>
+</body>
+
+<script>
+        
+    let titulo=document.querySelector("h1");
+    titulo.textContent="titulo modificado por JS";
+ 
+    console.log(document.querySelector("h1"));
+    
+    let elemntoporId = document.getElementById('parrafo1');
+    elemntoporId.innerHTML='HTML' ;
+    //console.log(elemntoporId)
+
+
+    let estacionAnual1='Invierno';
+    let estacionAnual2='verano';
+    let estacionAnual3='primavera';
+    let estacionAnual4='otoño';
+    let resultado=
+    `<ul>
+        <li>${estacionAnual1}</li>
+        <li>${estacionAnual2}</li>
+        <li>${estacionAnual3}</li>
+        <li>${estacionAnual4}</li>
+    </ul>`
+
+    console.log(resultado);
+
+</script>
+</html>
