@@ -35,6 +35,8 @@
         let saludo2 =`Hola, mi nombre es ${name} ${lastName}`;
         console.log(saludo2);
 
+        
+
         let nodoUL="<ul> <li>Invierno</li> <li>Verano</li>  <li>Primavera</li>  </ul>"
         let season1="invierno";
         let season2="verano";
@@ -262,6 +264,37 @@
     
         </code>
      </pre>
+     <pre>
+        Ademas de enviar los resultado a console tambien podemos enviarlos al cuerpo del documento htl
+        utiliadon el comando <b>document</b> de la siguiente forma:
+        <code>
+            setenseEnglish="learn english and Javascrip too"
+            document.write(setenseEnglish);
+        </code>
+     </pre>
+     <pre>
+        nota:
+        para desbloquer la divicion del bloque en la pantalla
+        usamos el menu ver-apariencia-sticky scrool
+
+     </pre>
+        Tembien podemos envar el resultado a traves de una ventana modal
+        utilizando el comando <b>alert</b> de la siquiente forma:
+        donde podemos mostra la salida a a travez de una ventana modal 
+        comando la ejecucion se detiene y espera que el usuario desde el navegador
+        confirme los datos.
+        <pre>
+            <code>
+                alert("mensaje por pantalla")
+            </code>
+        </pre>
+        si queremos obtener el valor del usuario pero esde el navegador
+        debemos usar el comando <b>promp</b>
+        <pre>
+            <code>
+                nombre=prompt("entre su nombre");
+            </code>
+        </pre>
     </article>
 
     <a href="cursoJavaScript.html">⏫</a>
@@ -301,6 +334,7 @@
                 
             </code>
         </pre>
+        para sacar el `` hay que usar la tecla altGr + tecla "}"
     </article>
     <a href="cursoJavaScript.html">⏫</a>
     <hr>
@@ -316,7 +350,7 @@
                 console.log(a,b);
                 console.log(c);
         
-                //si el valor est guardado como caracter hay que convertirlo a numero
+                //si el valor esta guardado como caracter hay que convertirlo a numero
                 d="10.65"
                 console.log(a+d);
                 console.log(a+parseInt(b));
