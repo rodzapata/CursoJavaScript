@@ -1,6 +1,6 @@
 let name = "rodney ";
 let lastName = "Zapata";
-let age = 48;
+let age = 49;
 
 console.log(name);
 console.log(lastName);
@@ -32,6 +32,7 @@ let setenceEnglish = "my firts app in Javascript";
 alert(setenceEnglish);
 
 //condicional
+
 let num1 = 10;
 let num2 = -15;
 if (num1 > num2) {
@@ -47,7 +48,16 @@ if (num1 > 0 || num2 > 0) {
   document.writeln("por lo meno uno es positivo");
 }
 
+
 //entrada de datos desde el navegador
 let nameEnter;
 nameEnter = prompt("Digite su nombre");
-document.write(`su nmbre es  ${nameEnter}`);
+document.write(`su nombre es  ${nameEnter}`);
+
+//funcion saludar que es llamada desde el html
+const saludo=document.getElementById('saludar');
+saludo.onclick=function(){
+  let nombreTeclado=prompt('Digite su  nombre');
+  alert(`Hola ${nombreTeclado},  encantado de verte!`);
+}
+
