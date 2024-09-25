@@ -223,6 +223,8 @@
         <li><a href="cursoJavaScript.html#ciclos">ciclos</a></li>
         <li><a href="cursoJavaScript.html#dom">manipulacion del DOM</a></li>
         <li><a href="cursoJavaScript.html#json">Json</a></li>
+        <li><a href="cursoJavaScript.html#prototipo">Prototipo de Instancias</a></li>
+        <li><a href="cursoJavaScript.html#map">metodo map en array</a></li>
 
     </ul>
 
@@ -234,7 +236,8 @@
         <a href="https://www.youtube.com/watch?v=tmRa0_EvMoc&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA&index=4">Curso de
             JavaScript por Jonathan Mircha</a> <br>
         Extensiones recomendadas que se deben instalar en visual code, para trabajar con JavaScript:
-        ESLint nos da utocompletado y nos guia con mensajes de error desde la consola, Ptettier para formatear documento
+        ESLint nos da utocompletado y nos guia con mensajes de error desde la consola, Ptettier para formatear documento. <br>
+        Tambien existe un curso completo buenisimo en freeCodeCamp <a href="https://www.freecodecamp.org/espanol/news/prototipo-javascript-expliacado-con-ejemplos/">Prototipos</a>
     </article>
 
     <a href="cursoJavaScript.html">⏫</a>
@@ -878,7 +881,32 @@
 
 
     </article>
-   
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="prototipo">Prototipo de instancia de un objeto</h2>
+    <article>
+        JavaScript es un lenguaje basado en prototipos,  por lo tanto entender el objeto <strong>prototype</strong> 
+        es uno de los conceptos más importantes que los profesionales de JavaScript necesitan saber.
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="map">metodo map con array</h2>
+    <article>
+        El metodo <strong>map</strong> te permite crear un nuevo array con los resultados de la llamada de una funcion indicada.
+        por ejemplo tenemos un array con unos numero y que queremos que a partir de ese se cree uno nuevo llamado <strong>doble</strong>
+        con los datos de cada item duplicado.
+        <pre>
+            <code>
+                numeros=[2,3,4];
+    
+                let duplicado=numeros.map(function (x){
+                    return x*2;
+                })
+            </code>
+        </pre>
+        
+    </article>
 
 </body>
 
