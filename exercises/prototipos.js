@@ -9,4 +9,3 @@ let duplicado2=numeros.map((x) => x*2)
 console.log(numeros);
 console.log(duplicado)
 console.log(duplicado2)
-clar
