@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>saludar desde un metodo funcion</title>
+</head>
+<body>
+    <button id="saludar">Saludar</button>
+    <script>
+        const saludo=document.getElementById("saludar");
+        saludo.onclick=function(){
+            let nombreTeclado=prompt("digite su nombre");
+            alert(`hola ${nombreTeclado},  Bienvenido !!`);
+        }
+    </script>
+</body>
+</html>
