@@ -231,8 +231,8 @@
         <li><a href="cursoJavaScript.html#forEach">metodo forEach() en array</a></li>
         <li><a href="cursoJavaScript.html#slice">metodo slice() en array</a></li>
         <li><a href="cursoJavaScript.html#objeto">metodo slice() en array de objeto</a></li>
-
-      
+        <li><a href="cursoJavaScript.html#teclado">entrada de datos por teclado</a></li>
+     
     
     </ul>
 
@@ -1026,6 +1026,23 @@
                   console.log("nuevoCoche[0].color = " + nuevoCoche[0].color);
             </code>
         </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="teclado">Entrada de datos por teclado</h2>
+    <article>
+        para capturar por teclado tenemo que instalar el modulo <strong>prompt-sync</strong> desde la consola <br>
+        npm install prompt-sync <br>
+        <pre>
+            <code>
+                const prompt = require('prompt-sync')();
+                let nombre = prompt("Digite su nombre: ");
+                console.log("Su nombre es: " + nombre);
+            </code>
+        </pre>
+        para ejecutar el archivo realizamos: <br>
+        node entrada_teclado.js
     </article>
 
 </body>
