@@ -1,0 +1,25 @@
+-- En SSMS:
+---MSDASQL
+---PostgreSQL30
+--PostgreSQL ODBC Driver(ANSI)
+
+--sp_dropserver 'PG_LINK', 'droplogins';
+
+EXEC sp_addlinkedserver 
+    @server='PG_LINK',
+    @srvproduct='PostgreSQL',
+    @provider='MSDASQL',
+    @datasrc='PC127';
+
+
+EXEC sp_addlinkedsrvlogin 
+    @rmtsrvname = 'PG_LINK',
+    @useself = 'false',
+    @locallogin = NULL,
+    @rmtuser = 'postgres',       -- Usuario PostgreSQL
+    @rmtpassword = 'Clave01.';  -- Contraseña
+
+
+INSERT INTO OPENQUERY(PG_LINK, 
+  'SELECT agencia, numfac FROM invoices')
+SELECT agencia, numfac FROM com_cxca01 where numfac='20153855'
