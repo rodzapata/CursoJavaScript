@@ -31,20 +31,20 @@
 
         //interpolacion de variables 
         //usando templete string
-        
-        let saludo2 =`Hola, mi nombre es ${name} ${lastName}`;
+
+        let saludo2 = `Hola, mi nombre es ${name} ${lastName}`;
         console.log(saludo2);
 
-        
 
-        let nodoUL="<ul> <li>Invierno</li> <li>Verano</li>  <li>Primavera</li>  </ul>"
-        let season1="invierno";
-        let season2="verano";
-        let season3="primavera";
-        
+
+        let nodoUL = "<ul> <li>Invierno</li> <li>Verano</li>  <li>Primavera</li>  </ul>"
+        let season1 = "invierno";
+        let season2 = "verano";
+        let season3 = "primavera";
+
         console.log("----interpolando dentro de un codigo HTML ----")
-        let nodoUl2=
-        `<ul>
+        let nodoUl2 =
+            `<ul>
             <li>${season1}</li>
             <li>${season2}</li>
             <li>${season3}</li>
@@ -52,66 +52,66 @@
 
         console.log(nodoUl2);
 
-        let a=5;
-        let b=6.48;
-        let c=a+b;
+        let a = 5;
+        let b = 6.48;
+        let c = a + b;
 
-        console.log(a,b);
+        console.log(a, b);
         console.log(c);
 
         //si el valor est guardado como caracter hay que convertirlo a numero
-        d="10.65"
-        console.log(a+d);
-        console.log(a+parseInt(b));
-        console.log(a+b.toFixed(1));
-   
+        d = "10.65"
+        console.log(a + d);
+        console.log(a + parseInt(b));
+        console.log(a + b.toFixed(1));
+
         //tipo de dato
         console.log(typeof a);
         console.log(typeof b);
         console.log(typeof d);
 
         //numeros boleanos
-        let verdadero=true;
-        let falso=false
+        let verdadero = true;
+        let falso = false
         console.log(verdadero, falso);
         console.log(typeof verdadero);
 
         //los numeros -negativos y positivos son verdaderos y  el cero es falso
-        let negativo=-2;
-        let cero=0;
-        let positivo=5;
-        console.log("cero: "+Boolean(cero));
-        console.log("negativo: "+Boolean(negativo));
-        console.log("positivo: "+Boolean(positivo));
+        let negativo = -2;
+        let cero = 0;
+        let positivo = 5;
+        console.log("cero: " + Boolean(cero));
+        console.log("negativo: " + Boolean(negativo));
+        console.log("positivo: " + Boolean(positivo));
         console.log(typeof negativo, typeof positivo);
         console.log(negativo, positivo);
-        console.log("cadena vacia: "+Boolean(""));
-        console.log("cadena con un espacio: "+Boolean(" "));
-        console.log("cadena con un punto: "+Boolean("."));
+        console.log("cadena vacia: " + Boolean(""));
+        console.log("cadena con un espacio: " + Boolean(" "));
+        console.log("cadena con un punto: " + Boolean("."));
 
         //variables infefinida
         let indefinida;
         //variable null
-        let nulo=null
-        console.log("variable indefinida "+indefinida);
-        console.log("variable nullas "+nulo);
+        let nulo = null
+        console.log("variable indefinida " + indefinida);
+        console.log("variable nullas " + nulo);
 
         //valor NaN no es un numero
-        let noEsUnNumero="hola"*3;
+        let noEsUnNumero = "hola" * 3;
         console.log(noEsUnNumero);
 
         //funciones
-        function saludar(nombre, edad){
+        function saludar(nombre, edad) {
             console.log(`mi nombre es ${nombre} y tengo ${edad} años `)
         }
 
         //invocamos la funcion
-//        saludar("rodney zapata",47);
+        //        saludar("rodney zapata",47);
         saludar();
 
 
         //funcion expresada o anonima
-        const funcionExpresion=function(){
+        const funcionExpresion = function () {
             console.log("funcion anonima, no se conoce el nombre de la funcion ni el valor de las variables");
         }
 
@@ -119,7 +119,7 @@
         funcionExpresion();
 
         //array
-        const pruebaArray=[15,"hola",true,["A","B","C"]];
+        const pruebaArray = [15, "hola", true, ["A", "B", "C"]];
         console.log(pruebaArray);
 
         //vemos elementos del array
@@ -127,21 +127,21 @@
         console.log(pruebaArray[3][1]) //nos muestra el elemento dentro de otro vector osea la letra B
 
         //array a partir del 2015
-        const pruebaArray2=Array.of(17,"wellcome");
-        console.log(pruebaArray2);  
+        const pruebaArray2 = Array.of(17, "wellcome");
+        console.log(pruebaArray2);
 
         //tambien se puede crear usando la POO
-        const objArray= new Array(1,2,"hola");
+        const objArray = new Array(1, 2, "hola");
         console.log(objArray);
 
         //tambien se puede definir un array de 100 elementos que se llene automaticamente con el valor predeterminado false
-        const dArray= new Array(100).fill(false);
-        console.log(dArray);    
+        const dArray = new Array(100).fill(false);
+        console.log(dArray);
 
         //array de cololres
-        const colores= new Array("Amarillo","azul","rojo");
+        const colores = new Array("Amarillo", "azul", "rojo");
         console.log(colores);
-        
+
         //agregamos el color verde
         colores.push("verde");
         console.log(colores);
@@ -151,34 +151,34 @@
         console.log(colores);
 
         //ciclo FOR dentro una funcion asincronica
-        colores.forEach(function(el,index){
-         console.log(`<li id="${index}">${el}</li>`);
+        colores.forEach(function (el, index) {
+            console.log(`<li id="${index}">${el}</li>`);
         });
 
         //Objeto cadena de caracter
-        const palabra= new String("cadena de datos");
+        const palabra = new String("cadena de datos");
         console.log(palabra);
 
         //Objetos en java script
-        const obj=new Object();
+        const obj = new Object();
         console.log(obj);
-      
+
         //objeto usuario
-        const usuario={
-            nombre:"Rodney",
-            apellido:"zapata",
-            direccion:"kra 5B No. 56c-93",
-            edad:47,
-            pasaTiempo:["Leer","programar","enseñar"],
-            soletero:false,
-            contacto:{
-                email:"rzapata@serviparamo.com.co",
-                telefono:"3103724590"
+        const usuario = {
+            nombre: "Rodney",
+            apellido: "zapata",
+            direccion: "kra 5B No. 56c-93",
+            edad: 47,
+            pasaTiempo: ["Leer", "programar", "enseñar"],
+            soletero: false,
+            contacto: {
+                email: "rzapata@serviparamo.com.co",
+                telefono: "3103724590"
             },
-            saludar:function(){
+            saludar: function () {
                 console.log(`Hola`);
             },
-            decirnombre:function(){
+            decirnombre: function () {
                 console.log(`mi nombre es ${this.nombre}`)
             }
         }
@@ -191,23 +191,23 @@
         console.log(usuario.saludar());
 
         //llamamos a la funcion saludar que está dentro del objeto Usuario
-        usuario.saludar();  
+        usuario.saludar();
         usuario.decirnombre();
 
         //nombre de los atributos y valor almacenado
         console.log(Object.keys(usuario));
         console.log(Object.values(usuario));
-        
+
         //funcion
-        const saludar2=function(){
+        const saludar2 = function () {
             console.log(`Hola dentro de un objeto`);
         }
 
         saludar2();
-        
 
-        
-</script>
+
+
+    </script>
     <!-- <li id="$(index)">$(el)</li> -->
     <h1>Curso de Java Script</h1>
     <h2>Indice Tematico</h2>
@@ -230,10 +230,10 @@
         <li><a href="cursoJavaScript.html#pop">metodo pop() en array</a></li>
         <li><a href="cursoJavaScript.html#forEach">metodo forEach() en array</a></li>
         <li><a href="cursoJavaScript.html#slice">metodo slice() en array</a></li>
+        <li><a href="cursoJavaScript.html#filter">metodo filter() en array</a></li>
         <li><a href="cursoJavaScript.html#objeto">metodo slice() en array de objeto</a></li>
         <li><a href="cursoJavaScript.html#teclado">entrada de datos por teclado</a></li>
-     
-    
+        <li><a href="cursoJavaScript.html#desectucturar">desectructurar objetos</a></li>
     </ul>
 
     <a href="cursoJavaScript.html">⏫</a>
@@ -244,10 +244,16 @@
         <a href="https://www.youtube.com/watch?v=tmRa0_EvMoc&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA&index=4">Curso de
             JavaScript por Jonathan Mircha</a> <br>
         Extensiones recomendadas que se deben instalar en visual code, para trabajar con JavaScript:
-        ESLint nos da utocompletado y nos guia con mensajes de error desde la consola, Ptettier para formatear documento. <br>
-        Tambien existe un curso completo buenisimo en freeCodeCamp <a href="https://www.freecodecamp.org/espanol/news/prototipo-javascript-expliacado-con-ejemplos/">Prototipos</a> <br>
-        curso de JavaScript por Carlos <a href="https://www.youtube.com/watch?v=S9ojNaeC1RI&t=2170s">Carlos </a> <br><br>
-        Esta pagina muestra ejercicios de Javascripts <a href="https://www.tutorialesprogramacionya.com/">JavascriptYa</a>
+        ESLint nos da utocompletado y nos guia con mensajes de error desde la consola, Ptettier para formatear
+        documento.
+        <br>
+        Tambien existe un curso completo buenisimo en freeCodeCamp <a
+            href="https://www.freecodecamp.org/espanol/news/prototipo-javascript-expliacado-con-ejemplos/">Prototipos</a>
+        <br>
+        curso de JavaScript por Carlos <a href="https://www.youtube.com/watch?v=S9ojNaeC1RI&t=2170s">Carlos </a>
+        <br><br>
+        Esta pagina muestra ejercicios de Javascripts <a
+            href="https://www.tutorialesprogramacionya.com/">JavascriptYa</a>
     </article>
 
     <a href="cursoJavaScript.html">⏫</a>
@@ -282,7 +288,7 @@
     
         </code>
      </pre>
-     <pre>
+        <pre>
         Ademas de enviar los resultado a console tambien podemos enviarlos al cuerpo del documento htl
         utiliadon el comando <b>document</b> de la siguiente forma:
         <code>
@@ -290,7 +296,7 @@
             document.write(setenseEnglish);
         </code>
      </pre>
-     <pre>
+        <pre>
         nota:
         para desbloquer la divicion del bloque en la pantalla
         usamos el menu ver-apariencia-sticky scrool
@@ -298,7 +304,7 @@
      </pre>
         Tembien podemos envar el resultado a traves de una ventana modal
         utilizando el comando <b>alert</b> de la siquiente forma:
-        donde podemos mostra la salida a a travez de una ventana modal 
+        donde podemos mostra la salida a a travez de una ventana modal
         comando la ejecucion se detiene y espera que el usuario desde el navegador
         confirme los datos.
         <pre>
@@ -315,9 +321,10 @@
         </pre>
 
         ahora vamos a crear un boton dentro del archivo <strong>variables.html</strong> que se conecta
-        a una funcion que se ejecuta dentro del archivo <strong>variables.cs</strong> 
-        si se quiere ampliar al informacion podemos consulta la pagina 
-        <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Variables">variables enlasado a un metodo</a>
+        a una funcion que se ejecuta dentro del archivo <strong>variables.cs</strong>
+        si se quiere ampliar al informacion podemos consulta la pagina
+        <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Variables">variables enlasado a un
+            metodo</a>
         <pre>
             <code>
                 html 
@@ -445,9 +452,14 @@
     <hr>
     <h2 id="nulos">valores nulos </h2>
     <article>
-        en Javascript existe una diferencia entre variables <strong>undefined</strong> y variables <strong>null</strong>, la primera <br>
-        es cuando se crea la variable pero no se ha inicializado entonces Javascrit le asigna como valor <strong>indefinido</strong>, la <br>
-        segunda es cuando el programador quiere hacer enfasis que ahun no le asignado ningun valor <strong>null</strong>. <br><br>
+        en Javascript existe una diferencia entre variables <strong>undefined</strong> y variables
+        <strong>null</strong>, la
+        primera <br>
+        es cuando se crea la variable pero no se ha inicializado entonces Javascrit le asigna como valor
+        <strong>indefinido</strong>, la <br>
+        segunda es cuando el programador quiere hacer enfasis que ahun no le asignado ningun valor
+        <strong>null</strong>.
+        <br><br>
         <pre>
             <code>
                 //variables infefinida
@@ -474,10 +486,14 @@
     <hr>
     <h2 id="compuesto">Datos compuestos </h2>
     <article>
-        Hasta el momento hemos utilizado datos primitivos: <strong>number, string, boolean, undefined, null</strong>. <br>
-        Ahora vamos a trabajar los datos compuestos: <strong>object={}, array=[], funcion(), class={}, etc</strong>. <br><br>
+        Hasta el momento hemos utilizado datos primitivos: <strong>number, string, boolean, undefined, null</strong>.
+        <br>
+        Ahora vamos a trabajar los datos compuestos: <strong>object={}, array=[], funcion(), class={}, etc</strong>.
+        <br><br>
 
-        primero empezemos con las funciones, a las funciones se les puede pasar parametros , como en el siguiente ejemplo: <br>
+        primero empezemos con las funciones, a las funciones se les puede pasar parametros , como en el siguiente
+        ejemplo:
+        <br>
         <pre>
             <code>
                 //definir funcion
@@ -489,7 +505,9 @@
                 saludar("Rodney Zapata",47);
             </code>
         </pre>
-        En el case que se invocar la funcion solamente sin pasarles parametros, entonces Javasript colocara los valores como <strong>indefinided</strong>,
+        En el case que se invocar la funcion solamente sin pasarles parametros, entonces Javasript colocara los valores
+        como
+        <strong>indefinided</strong>,
         Tambien se puede colocar valores por defectos a partir del 2015 y es de la siguiente forma:
         <pre>
             <code>
@@ -500,9 +518,12 @@
                     }
     
             </code>
-        </pre>   
-        existe otro tipo de funcion llamada anonima, donde es una funcion dinamica donde no se conoce el nombre de la funcion ni el valor de la variable. <br>
-        Tambien primero hay que definirla para despues ser invocadas en caso contrario genera error, en cambio las funciones anterior <strong>declarada</strong> 
+        </pre>
+        existe otro tipo de funcion llamada anonima, donde es una funcion dinamica donde no se conoce el nombre de la
+        funcion ni el valor de la variable. <br>
+        Tambien primero hay que definirla para despues ser invocadas en caso contrario genera error, en cambio las
+        funciones
+        anterior <strong>declarada</strong>
         pueden ser invocadas en cualquier parte del codigo inclusive antes de ser definida.<br><br>
         <pre>
             <code>
@@ -515,11 +536,12 @@
                 funcionExpresion();
         
             </code>
-        </pre>    
+        </pre>
 
-        <h3>Arrays</h3> 
-        los array se define entre corchetes [], y puedes contener elementos de distintos tipos como numeros, caracter, booleanos inclusive, <br>
-        pueden contener a su ves otro array, como se muesta a continuacion: <br> 
+        <h3>Arrays</h3>
+        los array se define entre corchetes [], y puedes contener elementos de distintos tipos como numeros, caracter,
+        booleanos inclusive, <br>
+        pueden contener a su ves otro array, como se muesta a continuacion: <br>
         <pre>
             <code>
                 //array
@@ -564,12 +586,16 @@
                 });
             </code>
         </pre>
-        <h3>Objetos</h3> 
+        <h3>Objetos</h3>
         se dice que en Javascrip todo es un objeto, si creamos una cadena de caracteres internamente es un objeto. <br>
-        notemos que tanto los objetos como las caracteres se identifica con <strong>{ }</strong>, como se muestra a continuacion: <br>
-        un objeto contienes diferentes tipos de datos, numero, caracteres, inclusive <strong>arrays</strong>  y hasta otros <strong>objetos</strong> . <br>
+        notemos que tanto los objetos como las caracteres se identifica con <strong>{ }</strong>, como se muestra a
+        continuacion: <br>
+        un objeto contienes diferentes tipos de datos, numero, caracteres, inclusive <strong>arrays</strong> y hasta
+        otros
+        <strong>objetos</strong> . <br>
         Hasta se puede que el campo llame una funcion. <br>
-        en POO a las varibles que estan dentro del objeto se le llama <strong>atributos / propiedades</strong> y las funciones se les llama, <br>
+        en POO a las varibles que estan dentro del objeto se le llama <strong>atributos / propiedades</strong> y las
+        funciones se les llama, <br>
         <strong>metodos</strong>
         <pre>
             <code>
@@ -633,7 +659,8 @@
         los arrays o areglos, tambien llamados matrices , es un objeto que puede contener otros objetos,
         primero crearemo una lista de compras <strong>shipping</strong>, que contiene:
         pan, leche, queso, pastas, fideos
-        para mayor informacion podemos consulta la pagina <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays"> arrays </a>
+        para mayor informacion podemos consulta la pagina <a
+            href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays"> arrays </a>
         <pre>
             <code>
                 // creamos lita de compras
@@ -647,13 +674,15 @@
     <hr>
     <h2 id="ciclos">ciclos </h2>
     <article>
-        existen ciclos <strong>for</strong>, cuando sabemos 
-        
+        existen ciclos <strong>for</strong>, cuando sabemos
+
 
         si se quiere profundizar mas sobre los ciclos podemos consultar la documentacion oficial
-        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">ciclos documentacion </a><br>
+        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">ciclos
+            documentacion </a><br>
         Tambien podemos ver en la pagina de freecodecamp donde se amplia el tema
-        <a href="https://www.freecodecamp.org/espanol/news/tutorial-de-javascript-arrayforeach-como-iterar-a-traves-de-elementos-en-un-arreglo/">freeCodeCamp</a>
+        <a
+            href="https://www.freecodecamp.org/espanol/news/tutorial-de-javascript-arrayforeach-como-iterar-a-traves-de-elementos-en-un-arreglo/">freeCodeCamp</a>
         <pre>
             <code>
                 //ciclo for 
@@ -696,7 +725,8 @@
             </code>
         </pre>
         Tambien es muy utilizada que al reccorrer el ciclo por cada interacion llame a una funcion, por ejemplo
-        al recorrer el array de fruata le pases el nombre y el indice a una funcion, la funcion la llamaremos <strong>hayFruta</strong> <br>
+        al recorrer el array de fruata le pases el nombre y el indice a una funcion, la funcion la llamaremos
+        <strong>hayFruta</strong> <br>
         <pre>
             <code>
                 // array de frutas
@@ -713,7 +743,7 @@
             </code>
         </pre>
         En caso que <strong>fruit</strong> tanga el nombre de la fruta y el color, entonces seria en vector de objetos.
-        y la funcion llamada debe mostrarno el nombre y el color de la fruta 
+        y la funcion llamada debe mostrarno el nombre y el color de la fruta
         <pre>
             <code>
                 //creamos un array de objetos 
@@ -750,11 +780,14 @@
     <hr>
     <h2 id="dom">Manipulacion del DOM </h2>
     <article>
-        para la manipulacion del DOM, donde de javascript podemos manipular el  html
+        para la manipulacion del DOM, donde de javascript podemos manipular el html
         existe una serie de pasos a seguir como se muestra en el link a continuacion
-        <a href="https://www.youtube.com/watch?v=iaLiOXXR8eI&list=PLg9145ptuAijiWx4ixGBCZB0kh6YEeNqf">Manipulacion del DOM con yackyjon </a> <br>
-        Hay otro curso bastante practico sobre manejo del DOM, que lo podemos encontar en 
-        <a href="https://www.youtube.com/watch?v=NuG59Zw8wf4">CURSO DOM JavaScript MODERNO - PRACTICO por AlexCGDesigne</a>
+        <a href="https://www.youtube.com/watch?v=iaLiOXXR8eI&list=PLg9145ptuAijiWx4ixGBCZB0kh6YEeNqf">Manipulacion del
+            DOM
+            con yackyjon </a> <br>
+        Hay otro curso bastante practico sobre manejo del DOM, que lo podemos encontar en
+        <a href="https://www.youtube.com/watch?v=NuG59Zw8wf4">CURSO DOM JavaScript MODERNO - PRACTICO por
+            AlexCGDesigne</a>
         <pre>
             <code>
                 //variables infefinida
@@ -774,17 +807,18 @@
     <h2 id="json">jSon </h2>
     <article>
         Json es un formato ligero de intercambio de datos. Esta construido por dos estructura :
-        la primera es una coleccion de pares compuesto por nombre clave  / valor
+        la primera es una coleccion de pares compuesto por nombre clave / valor
         la segunda es un lista ordenada de valores, como arreglos, vectores, listas o secuencias.
         es un formato universal y no depende del lenguaje de programacion, es untilizados por todos como:
         java, javaScrip, c#, python, perl, etc.
-        los datos deben pasarse entre comillas dobles. y si creamos archivos deben tenere la extension <strong>.json</strong>
+        los datos deben pasarse entre comillas dobles. y si creamos archivos deben tenere la extension
+        <strong>.json</strong>
 
-        para mayor informacion se puede consultar la pagina 
+        para mayor informacion se puede consultar la pagina
         <a href="https://www.json.org/json-es.html" target="_blank">Json en español</a>
-        FAzt tambien muestra un tutoirial 
+        FAzt tambien muestra un tutoirial
         <a href="https://www.youtube.com/watch?v=LJzDHKPLWYw" target="_blank">Json Fazt</a>
-        
+
         <pre>
             <code>
                 // creamos un objeto User
@@ -803,16 +837,20 @@
                      
             </code>
         </pre>
-        si observamos en el primero nos muestra desde el navegador que es un objeto <strong>prototype</strong> de JavaScript,
-        pero el segundo nos muestra entre llaves y los campos claves encerrados entre comillas dobles, que nos indica que 
+        si observamos en el primero nos muestra desde el navegador que es un objeto <strong>prototype</strong> de
+        JavaScript,
+        pero el segundo nos muestra entre llaves y los campos claves encerrados entre comillas dobles, que nos indica
+        que
         en un formato de json de intercambio.
         Tambien podemos validar si el formato esta correcto uando la pagina web
-        <a href="https://jsonlint.com/" target="_blank">Json validator</a>         <br><br>
+        <a href="https://jsonlint.com/" target="_blank">Json validator</a> <br><br>
         Tambine podemos formatear un archivo xml con la pagina xmlt formatear
         <a href="https://www.site24x7.com/es/tools/xml-formateador.html">Formateador de xml</a>
 
 
-        Tambien podemos mostrar los datos de un objeto uilizano el punto <strong>.</strong> y lo enviamos a consola como a continuacion:
+        Tambien podemos mostrar los datos de un objeto uilizano el punto <strong>.</strong> y lo enviamos a consola como
+        a
+        continuacion:
         <pre>
             <code>
                 // si queremos ver el nombre de usuario seria asi
@@ -821,7 +859,8 @@
             </code>
         </pre>
 
-        podemos crear una lista de datos llamados <strong>friends</strong>, que contiene los amigos de un usuario, cada amigo cuenta 
+        podemos crear una lista de datos llamados <strong>friends</strong>, que contiene los amigos de un usuario, cada
+        amigo cuenta
         con un nombre y una profesion, entonces el objeto en javascript seria:
         <pre>
             <code>
@@ -844,7 +883,7 @@
         </pre>
 
         Tambien podemos tener un objeto html <strong>&lt;Ul&gt;</strong> por ejemplo una lista de amigos que es llenado
-        desde un ciclo en javascript 
+        desde un ciclo en javascript
         <pre>
             <code>
                 //lista de amigos
@@ -895,7 +934,7 @@
     <hr>
     <h2 id="prototipo">Prototipo de instancia de un objeto</h2>
     <article>
-        JavaScript es un lenguaje basado en prototipos,  por lo tanto entender el objeto <strong>prototype</strong> 
+        JavaScript es un lenguaje basado en prototipos, por lo tanto entender el objeto <strong>prototype</strong>
         es uno de los conceptos más importantes que los profesionales de JavaScript necesitan saber.
     </article>
 
@@ -903,8 +942,10 @@
     <hr>
     <h2 id="map">metodo map con array</h2>
     <article>
-        El metodo <strong>map</strong> te permite crear un nuevo array con los resultados de la llamada de una funcion indicada.
-        por ejemplo tenemos un array con unos numero y que queremos que a partir de ese se cree uno nuevo llamado <strong>doble</strong>
+        El metodo <strong>map</strong> te permite crear un nuevo array con los resultados de la llamada de una funcion
+        indicada.
+        por ejemplo tenemos un array con unos numero y que queremos que a partir de ese se cree uno nuevo llamado
+        <strong>doble</strong>
         con los datos de cada item duplicado.
         <pre>
             <code>
@@ -922,7 +963,9 @@
     <hr>
     <h2 id="at">metodo at() con array</h2>
     <article>
-        El metodo <strong>at()</strong> nos devuelve la posicion que ocupa un elemento dentro de un array.  por ejemplo si queremos ver la posicion 2
+        El metodo <strong>at()</strong> nos devuelve la posicion que ocupa un elemento dentro de un array. por ejemplo
+        si
+        queremos ver la posicion 2
         del array numeros=[2,3,4], deberia mostrarnos el numero 4.
         <pre>
             <code>
@@ -995,6 +1038,24 @@
 
     <a href="cursoJavaScript.html">⏫</a>
     <hr>
+    <h2 id="filter">metodo filter() con array</h2>
+    <article>
+        el metodo <strong>filter()</strong> nos devuelve un nuevo array con los datos filtrados
+        <pre>
+            <code>
+                const words = ["spray", "elite", "exuberant", "destruction", "present"];
+                
+                const result = words.filter((word) => word.length > 6);
+                
+                console.log(result);
+                // Expected output: Array ["exuberant", "destruction", "present"]
+               
+            </code>
+        </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
     <h2 id="objeto">metodo slice() con array de un objeto</h2>
     <article>
         El metodo <strong>slice()</strong> nos devuelve una porcion de elementos de un array como un array nuevo
@@ -1043,6 +1104,157 @@
         </pre>
         para ejecutar el archivo realizamos: <br>
         node entrada_teclado.js
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="desectucturar">desectructurar objetos</h2>
+    <article>
+        <strong>desectructurar</strong> consiste en la extracion de los valores internos dentro un objeto y asignarlos a
+        variables
+        <pre>
+            <code>
+                
+                const user={
+                    firtName:"rodney",
+                    lastName:"zapata",
+                    age:50
+                }
+                
+                console.log(user);
+                const nombre=user.firtName;
+                const apellido=user.lastName;
+                
+                console.log(`firtname is ${nombre}`);
+                console.log(`lastname is ${apellido}`);
+                
+                console.log("==== desectructuramos el objeto =======")
+                const {firtName, lastName} = user;
+                console.log(`el nombres es ${firtName} y el apellido es ${lastName}`);
+            </code>
+        </pre>
+        En caso que queremos cambiar los nombres de la variables al objeto quedaria así;
+        <pre>
+            <code>
+                const {firtName:nomb, lastName:ape} = user;
+                console.log(`el nombre es ${nomb} y el apellido es ${ape}` );
+            </code>
+        </pre>
+        Tambien nos podemos encontrar con una desectruturacion anidada:
+        <pre>
+            <code>
+                console.log("=== desectructuracion anidada ===")
+                const usuarios ={
+                    id: 1,
+                    info: {
+                        nombreUser: "rodney zapata",
+                        edadUser:50
+                    }
+                }
+                
+                const {info: {nombreUser, edadUser}}=usuarios;
+                console.log(`usuario nombre: ${nombreUser} y su edad es ${edadUser}`);
+            </code>
+        </pre>
+        los arreglos tambien se pueden desectructura un arreglo la diferencia es que en vez de usar llaves <strong>{
+            }</strong> usaremos corchetes <strong>[ ] </strong>
+        <pre>
+                <code>
+                    const numeros=[10,20,30];
+                    const [a,b,c] = numeros;
+                    console.log(a);
+                    console.log(b);
+                    console.log(c);
+        
+                </code>
+            </pre>
+        si queremos saltar elementos seria asi:
+        <pre>
+            <code>
+                console.log("==== saltando elementos de un arreglos ====")
+                const dias = [1, 2, 3, 4, 5, 6, 7];
+                const [primero, , tercero, , quinto, , septimo] = dias;
+                console.log(primero);
+                console.log(tercero)
+                
+            </code>
+        </pre>
+        uso del operardor rest ...
+        <pre>
+            <code>
+                console.log("==== uso del operador ... rest ====")
+                const frutas = ["manzana", "pera", "uva", "banana", "piña"];
+                const [primera, ...resto] = frutas;
+                console.log(primera);
+                console.log(resto)
+                
+            </code>
+        </pre>
+        tambien se puede usar desectructuracion para intercambiar valoes, por ejemplo:
+        <pre>
+            <code>
+                console.log("== intercambiando valores ====t")
+                let valor_a=1;
+                let valor_b=2
+                console.log(`valores de a ${valor_a} y b ${valor_b} ante del intercambio`);
+                [valor_b, valor_a]=[valor_a, valor_b] ;
+                console.log(`valores de a ${valor_a} y b ${valor_b} despues del intercambio`);
+                
+            </code>
+        </pre>
+        Una de las tecnicas mas utilizadas en pasar un objeto como argumento de una funcion y desectructurar el Objeto
+        <pre>
+            <code>
+                console.log("== pasar objeto como parametro de una funcion");
+                function mostrarInfo({nombre, direccion, edad}){
+                    console.log(`nombre es ${nombre}`)
+                    console.log(`direccion es ${direccion}`)
+                    console.log(`edad es ${edad}`)
+                }
+                
+                const persona={
+                    nombre:"cecilia Cantillo",
+                    direccion: "kra 5B No. 56c-93",
+                    edad:37
+                }
+                
+                mostrarInfo(persona);
+                
+            </code>
+        </pre>
+        el mismo ejemplo pero ahora la funcion es ahora funcion flecha
+        <pre>
+            <code>
+                const mostrarInfo2 = ({ nombre, direccion, edad }) => {
+                    console.log(`nombre es ${nombre}`)
+                    console.log(`direccion es ${direccion}`)
+                    console.log(`edad es ${edad}`)
+                    
+                };            
+                
+                mostrarInfo2(persona);
+                
+            </code>
+        </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="plantillas_literales">plantillas literales (templates literal)s</h2>
+    <article>
+        Es una forma flexible de crear cadena de textos que te permite :
+        interpolacion de valores,
+        multilinea sin caracteres especiales,
+        fácil combinadion de expresiones
+        <pre>
+            <code>
+                let nombre="rodney zapata";
+                let edad=50
+
+                let mensaje=`el nombre es ${nombre} y tiene la edad de ${edad} años`
+            </code>
+        </pre>
+
     </article>
 
 </body>
