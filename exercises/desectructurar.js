@@ -48,7 +48,8 @@ console.log("==== uso del operador ... rest ====")
 const frutas = ["manzana", "pera", "uva", "banana", "piña"];
 const [primera, ...resto] = frutas;
 console.log(primera);
-console.log(resto)
+console.log(resto);
+console.log(frutas);
 
 console.log("== intercambiando valores ====t")
 let valor_a = 1;
