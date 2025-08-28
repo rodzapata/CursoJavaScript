@@ -221,13 +221,18 @@
         <li><a href="cursoJavaScript.html#nulos">valores nulos</a></li>
         <li><a href="cursoJavaScript.html#compuesto">Datos compuesto</a></li>
         <li><a href="cursoJavaScript.html#arrays">arrays</a></li>
+        <li><a href="cursoJavaScript.html#filtros">Filtros en arrays</a></li>
         <li><a href="cursoJavaScript.html#ciclos">ciclos</a></li>
         <li><a href="cursoJavaScript.html#dom">manipulacion del DOM</a></li>
         <li><a href="cursoJavaScript.html#json">Json</a></li>
+        <li><a href="cursoJavaScript.html#parse">Json parse()</a></li>
         <li><a href="cursoJavaScript.html#prototipo">Prototipo de Instancias</a></li>
         <li><a href="cursoJavaScript.html#map">metodo map() en array</a></li>
         <li><a href="cursoJavaScript.html#at">metodo at() en array</a></li>
         <li><a href="cursoJavaScript.html#push">metodo push() en array</a></li>
+        <li><a href="cursoJavaScript.html#unshift">metodo unshift() en array</a></li>
+        <li><a href="cursoJavaScript.html#shift">metodo shift() en array</a></li>
+        <li><a href="cursoJavaScript.html#splice">metodo splice() en array</a></li>
         <li><a href="cursoJavaScript.html#pop">metodo pop() en array</a></li>
         <li><a href="cursoJavaScript.html#forEach">metodo forEach() en array</a></li>
         <li><a href="cursoJavaScript.html#slice">metodo slice() en array</a></li>
@@ -235,6 +240,7 @@
         <li><a href="cursoJavaScript.html#objeto">metodo slice() en array de objeto</a></li>
         <li><a href="cursoJavaScript.html#teclado">entrada de datos por teclado</a></li>
         <li><a href="cursoJavaScript.html#desectucturar">desectructurar objetos</a></li>
+        <li><a href="cursoJavaScript.html#expresiones-regulares">expresiones regulares</a></li>
     </ul>
 
     <a href="cursoJavaScript.html">⏫</a>
@@ -715,6 +721,55 @@
 
     <a href="cursoJavaScript.html">⏫</a>
     <hr>
+    <h2 id="filtros">filtros en Arrays usando filter() </h2>
+    <article>
+    Filtra los datos de un array en un array nuevo <br>
+    <pre>
+        <code>
+
+            let countries = ["Colombia", "germany", "new zealand", "eeuu"];
+            console.log("===== usamos filter() para el arrays =====")
+            console.log(countries)
+            console.log("===== filtramos los paises con mas de 6 carateres =====")
+            let resultado = countries.filter((e) => e.length > 6);
+            console.log(resultado);
+            
+            let user = [
+                { name: "rodney", active: true },
+                { name: "cecilia", active: false },
+                { name: "juan", active: false },
+                { name: "samuel", active: true },
+            ]
+            
+            console.log(user);
+            let userActive = user.filter((u) => u.active);
+            console.log("=== filtramos los usuarios activos en un array de objetos")
+            console.log(userActive);
+            
+            let products = [
+                { id: 1, name: "pc", category: "office" },
+                { id: 2, name: "keyboard", category: "office" },
+                { id: 3, name: "mouse", category: "office" },
+                { id: 4, name: "mini split", category: "refrigerator" },
+                { id: 5, name: "book", category: "stationery" },
+            
+            ]
+            
+            console.log(products)
+            let productsOffice = products.filter((prod) => prod.category === 'office');
+            console.log("=== filtramos los productos por categoria office")
+            console.log(productsOffice);
+            
+            console.log("=== filtramos los productos difererente al id 2")
+            let nuevoProducto = products.filter((prod)=> prod.id !=2 );
+            console.log(nuevoProducto);
+
+        </code>
+    </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
     <h2 id="ciclos">ciclos </h2>
     <article>
         existen ciclos <strong>for</strong>, cuando sabemos
@@ -963,7 +1018,7 @@
                 let itemIva = Object.values(item).map((valor) => valor * 1.19)
                 console.log(item);
                 console.log(itemIva);
-                
+
                 // sumar todos los valores con IVA
                 let total = itemIva.reduce((acum, valor) => acum + valor, 0);
                 console.log("Total con IVA:", total); // 7140
@@ -1136,6 +1191,67 @@
     </article>
     <a href="cursoJavaScript.html">⏫</a>
     <hr>
+    <h2 id="parse">jSon parse()</h2>
+    <article>
+        convierte un string JSON en un objeto JavaScript. <br>
+        Esto se usa mucho porque las APIs REST, archivos de configuración, logs, etc. normalmente envían/guardan información como JSON (en texto). <br>
+        <pre>
+            <code>
+
+                // Simulación de respuesta de una API
+
+                let response = '{"id":101,"cliente":"Ana","total":5000}';
+                
+                let factura = JSON.parse(response);
+                console.log(factura.id);
+                console.log(factura.cliente);
+                
+                //localStorage
+                
+                // Supongamos que ya guardamos
+                localStorage.setItem("usuario", '{"nombre":"Juan","rol":"admin"}');
+                
+                // Recuperar el dato
+                let usuario = JSON.parse(localStorage.getItem("usuario"));
+                
+                console.log(usuario.nombre); // "Juan"
+                console.log(usuario.rol);    // "admin"
+                                
+            </code>
+        </pre>
+        si usamos rect un ejemplo del parse lo podemos usar guardar el tema de localStorage <br>
+        <pre>
+            <code>
+
+                import React, { useEffect, useState } from 'react'
+
+                const Temas = () =&gt; {    
+                    const [theme, setTheme] = useState(() =&gt; {
+                        return localStorage.getItem("theme") || "ligth";
+                    })
+                
+                    //cada vez que cambie el tema debe guardarse en localStorage
+                    useEffect(() =&gt; {
+                        localStorage.setItem("theme", theme)
+                    }, [theme]
+                    )
+                
+                    return (
+                        &lt;div style={{ background: theme === "light" ? "#fff" : "#333", color: theme === "light" ? "#000" : "#fff" }}&gt;
+                        &lt;h1>Tema actual: {theme}&lt;/h1>
+                        &lt;button onClick={() =&gt; setTheme(theme === "light" ? "dark" : "light")}>
+                                Cambiar tema
+                            &lt;/button>
+                        &lt;/div&gt;)
+                }
+                
+                export default Temas                
+            </code>
+        </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
     <h2 id="prototipo">Prototipo de instancia de un objeto</h2>
     <article>
         JavaScript es un lenguaje basado en prototipos, por lo tanto entender el objeto <strong>prototype</strong>
@@ -1192,6 +1308,57 @@
                 console.log(numeros); //nos muestra [2,3,4,25]
             </code>
         </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="unshift">metodo unshift() con array</h2>
+    <article>
+        El metodo <strong>unshift()</strong> agrega un elemento al inicio del array
+        <pre>
+            <code>
+                const shoping = ["bread", "milk", "cheese", "hummus", "noodles"];
+                console.log(shoping);
+
+                console.log("=== agregamos un inte al inicio =====")
+                shoping.unshift("first");
+                console.log(shoping)  //nos muestra ["first","bread", "milk", "cheese", "hummus", "noodles"]              
+                
+            </code>
+        </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="shift">metodo shift() con array</h2>
+    <article>
+        El metodo <strong>shift()</strong> elimina el primer elemento de un array
+        <pre>
+            <code>
+                const shoping = ["bread", "milk", "cheese", "hummus", "noodles"];
+                console.log(shoping);
+
+                console.log("=== eliminamo el primer item del array =====")
+                shoping.shift();
+                console.log(shoping)  //nos muestra ["milk", "cheese", "hummus", "noodles"]              
+                
+            </code>
+        </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="splice">metodo splice() con array</h2>
+    <article>
+        El metodo <strong>splice()</strong> nos permite actualizar, eliminar, adiciona elemento de un array <br>
+        syntax: splice(start[, deleteCount[, item1[, item2[, ...]]]]) <br>
+               
+        <pre>
+            <code>
+
+            </code>
+        </pre>
+
     </article>
 
     <a href="cursoJavaScript.html">⏫</a>
@@ -1459,6 +1626,72 @@
             </code>
         </pre>
 
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="expresiones-regulares">expresiones regulares</h2>
+    <article>
+        Las expresiones regulares son utilizadas en la validacion de contraseñas, y transformar cadena de texto <br>
+        en esta pagina podemos generar nuestras expresiones regulares <a href="https://regexr.com/" target="_blank" rel="noopener noreferrer">regexr.com</a> <br>
+
+        <pre>
+            <code>
+                console.log("===== validacion de correos =========");
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                const correos = ["usuario@mail.com", "usuario@", "test@dominio.co"];
+                
+                correos.forEach(correo => {
+                  console.log(`${correo} es válido?`, emailRegex.test(correo));
+                });
+                
+                
+                console.log("=== Regla: mínimo 8 caracteres, al menos una mayúscula, una minúscula, un número y un símbolo. ==");
+                const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+                
+                const passwords = ["Hola123!", "123456", "Password"];
+                
+                passwords.forEach(pass => {
+                  console.log(`${pass} es válido?`, passwordRegex.test(pass));
+                });
+                
+                
+                console.log("=== Regla: validar numero de telefono, debe empezar por 3 y tener 10 numeros");
+                const phoneRegex = /^3\d{9}$/; // Debe empezar con 3 y tener 10 dígitos
+                
+                const telefonos = ["3104567890", "123456789", "3509876543"];
+                
+                telefonos.forEach(tel => {
+                  console.log(`${tel} es válido?`, phoneRegex.test(tel));
+                });
+                
+                
+                console.log("==== Eliminar espacios extra en textos ====")
+                const texto = "   Hola    mundo   con   espacios   ";
+                const limpio = texto.replace(/\s+/g, " ").trim();
+                
+                console.log("Original:", texto);
+                console.log("Limpio:", limpio);
+                
+                console.log("==== Extraer solo números de una cadena (ejemplo facturación) =====")
+                const factura = "Factura N°: 2025-00123";
+                const numero = factura.match(/\d+/g).join("");
+                
+                console.log("Número de factura:", numero);
+                
+                console.log("==== valida URL ========")
+                const urlRegex = /^(https?:\/\/)?([\w\-]+\.)+[a-z]{2,}(\/\S*)?$/i;
+                
+                const urls = ["https://google.com", "ftp://test.com", "http://miweb.co/servicio"];
+                
+                urls.forEach(url => {
+                  console.log(`${url} es válido?`, urlRegex.test(url));
+                });
+                
+
+            </code>
+        </pre>
     </article>
 
 </body>
