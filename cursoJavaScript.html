@@ -242,6 +242,7 @@
         <li><a href="cursoJavaScript.html#reduce">metodo reduce() en array</a></li>
         <li><a href="cursoJavaScript.html#sort">metodo sort() en array</a></li>
         <li><a href="cursoJavaScript.html#every">metodo every() compara array, si los elementos del array para la funcion de prueba</a></li>
+        <li><a href="cursoJavaScript.html#some">metodo some() algun elemento array</a></li>
         <li><a href="cursoJavaScript.html#teclado">entrada de datos por teclado</a></li>
         <li><a href="cursoJavaScript.html#desectucturar">desectructurar objetos</a></li>
         <li><a href="cursoJavaScript.html#expresiones-regulares">expresiones regulares</a></li>
@@ -1592,9 +1593,72 @@
     <h2 id="every">every() compara array</h2>
     <article>
         prueba si todos los elementos del arreglo pasan la prueba implementada por la función proporcionada. Devuelve un valor booleano <br>
+        <pre>
+            <code>
+
+                const numero = [4, 7, 2, -10, -5];
+                console.log(numero)
+                const sonPositivos = numero.every(num => num > 0)
+                console.log(sonPositivos)
+                
+                
+                const pagos = [
+                    { id: 1, estado: "aprobado" },
+                    { id: 2, estado: "aprobado" },
+                    { id: 3, estado: "pendiente" }
+                ];
+                console.log(pagos);
+                const todoAprobado = pagos.every(pago => pago.estado === "aprobado");
+                console.log(todoAprobado)
+                
+                const passwords = ["Clave123!", "Passw0rd$", "1234567"];
+                console.log(passwords);
+                const segura = passwords.every(p => p.length > 6 && /\d/.test(p))
+                console.log(segura);
+                
+                const rolesUsuario = ["ADMIN", "USER"];
+                const rolesPermitidos = ["ADMIN", "USER", "SUPERVISOR"];
+                
+                console.log(rolesPermitidos);
+                console.log(rolesUsuario);
+                const accesoValido = rolesUsuario.every(roll => rolesPermitidos.includes(roll));
+                console.log(accesoValido);
+
+            </code>
+        </pre>
 
     </article>        
         
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="some">some() alguno elemento del array cumple la condicion</h2>
+    <article>
+        El método some() comprueba si al menos un elemento del array cumple con la condición implementada por la función proporcionada. <br>
+        🚀 Resumen rápido
+
+        every() → se cumple la condición en todos los elementos.
+        
+        some() → se cumple la condición en al menos uno.
+        
+        👉 Ejemplo aplicado a la vida laboral:
+        
+        every() → ¿El usuario tiene todos los permisos requeridos?
+        
+        some() → ¿El usuario tiene al menos un permiso requerido?
+        <pre>
+            <code>
+
+                const rolesUsuario = ["INVITADO", "USER"];
+                const rolesPermitidos = ["ADMIN", "USER", "SUPERVISOR"];
+                
+                const tieneAcceso = rolesUsuario.some(rol => rolesPermitidos.includes(rol));
+                
+                console.log(tieneAcceso); // true (porque tiene "USER")
+                                
+            </code>
+        </pre>        
+    </article>        
+
     <a href="cursoJavaScript.html">⏫</a>
     <hr>
     <h2 id="teclado">Entrada de datos por teclado</h2>
