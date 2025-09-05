@@ -237,7 +237,11 @@
         <li><a href="cursoJavaScript.html#forEach">metodo forEach() en array</a></li>
         <li><a href="cursoJavaScript.html#slice">metodo slice() en array</a></li>
         <li><a href="cursoJavaScript.html#filter">metodo filter() en array</a></li>
-        <li><a href="cursoJavaScript.html#objeto">metodo slice() en array de objeto</a></li>
+        <li><a href="cursoJavaScript.html#objeto">metodo splice() en array de objeto</a></li>
+        <li><a href="cursoJavaScript.html#find">metodo find() en array</a></li>
+        <li><a href="cursoJavaScript.html#reduce">metodo reduce() en array</a></li>
+        <li><a href="cursoJavaScript.html#sort">metodo sort() en array</a></li>
+        <li><a href="cursoJavaScript.html#every">metodo every() compara array, si los elementos del array para la funcion de prueba</a></li>
         <li><a href="cursoJavaScript.html#teclado">entrada de datos por teclado</a></li>
         <li><a href="cursoJavaScript.html#desectucturar">desectructurar objetos</a></li>
         <li><a href="cursoJavaScript.html#expresiones-regulares">expresiones regulares</a></li>
@@ -360,9 +364,11 @@
     <hr>
     <h2 id="cadenas">manejo de Cadenas substring(), slice(), indexOf() </h2>
     <article>
-        podenos substraer cadena usando <strong>substring()</strong>, pero se recomienda en los proyectos modernos <strong>slice()</strong> <br>
+        podenos substraer cadena usando <strong>substring()</strong>, pero se recomienda en los proyectos modernos
+        <strong>slice()</strong> <br>
         ya que esta nos permite substraer inclusive valores negativos, osea partiendo desde el final <br>
-        <strong>NOTA: </strong> el valor inicial empieza con cero, no con el numero uno, osea funciona como los arrays. <br>
+        <strong>NOTA: </strong> el valor inicial empieza con cero, no con el numero uno, osea funciona como los arrays.
+        <br>
         <pre>
             <code>
                 let palabra="rodney@serviparamo.co"
@@ -723,8 +729,8 @@
     <hr>
     <h2 id="filtros">filtros en Arrays usando filter() </h2>
     <article>
-    Filtra los datos de un array en un array nuevo <br>
-    <pre>
+        Filtra los datos de un array en un array nuevo <br>
+        <pre>
         <code>
 
             let countries = ["Colombia", "germany", "new zealand", "eeuu"];
@@ -872,7 +878,8 @@
             </code>
         </pre>
 
-        <strong>Nota:</strong>En un ciclo <strong>For</strong> si esamos recoriendo un array usamos <strong>for of</strong>, pero
+        <strong>Nota:</strong>En un ciclo <strong>For</strong> si esamos recoriendo un array usamos <strong>for
+            of</strong>, pero
         si es un objeto usamos <strong>For in </strong> <br>
         Ahora vammos a recorre un array de objetos usando For of, forEach y map <br>
         <strong>Recorrido de array de objetos </strong>
@@ -953,7 +960,7 @@
                 }                
             </code>
         </pre>
-        recorrido usando  <strong>Object.keys + forEach</strong>  
+        recorrido usando <strong>Object.keys + forEach</strong>
         <pre>
             <code>
                 Object.keys(clientesObj).forEach(key => {
@@ -963,7 +970,7 @@
             </code>
         </pre>
 
-        recorrido usando  <strong>Object.values + forEach</strong>  
+        recorrido usando <strong>Object.values + forEach</strong>
         <pre>
             <code>
                 Object.values(clientesObj).forEach(cli => {
@@ -973,7 +980,7 @@
             </code>
         </pre>
 
-        recorrido usando  <strong>Object.entries + forEach</strong>  para estructura de diccionario <br>
+        recorrido usando <strong>Object.entries + forEach</strong> para estructura de diccionario <br>
         <pre>
             <code>
                 Object.entries(clientesObj).forEach(([key, cli]) => {
@@ -983,7 +990,7 @@
             </code>
         </pre>
         <strong>NOTA: </strong>
-        Se recomienda usar ForEach en react y node,  para dataset grande se recomienda for of <br>
+        Se recomienda usar ForEach en react y node, para dataset grande se recomienda for of <br>
         en rect para rendisar el mas usado es <strong>map</strong>
         vamos con un ejemplo : <br>
         <pre>
@@ -1194,7 +1201,8 @@
     <h2 id="parse">jSon parse()</h2>
     <article>
         convierte un string JSON en un objeto JavaScript. <br>
-        Esto se usa mucho porque las APIs REST, archivos de configuración, logs, etc. normalmente envían/guardan información como JSON (en texto). <br>
+        Esto se usa mucho porque las APIs REST, archivos de configuración, logs, etc. normalmente envían/guardan
+        información como JSON (en texto). <br>
         <pre>
             <code>
 
@@ -1352,10 +1360,29 @@
     <article>
         El metodo <strong>splice()</strong> nos permite actualizar, eliminar, adiciona elemento de un array <br>
         syntax: splice(start[, deleteCount[, item1[, item2[, ...]]]]) <br>
-               
+        donde <strong>start</strong> es la posicion que se desea cambiar en el array <br>
+        <strong>deleteCount</strong> si se pasa 0 se incerta un registro y se coloca 1 el valor es remplazado <br>
+        <strong>item</strong> es el nuevo valor <br>
+        <strong>NOTA: </strong> si en el segunto parametro al pasarle 1 y no le incluimos su nuevo valor la posicion se
+        elimna de ahi en adelante <br>
+
         <pre>
             <code>
 
+                let meses = ["ener", "marzo", "mayo"];
+                console.log(meses);
+                
+                console.log("insertamos a febreo en la posicion 1")
+                meses.splice(1, 0, "febr")
+                console.log(meses);
+                
+                console.log("remplazamo  a mayo con abril")
+                meses.splice(3, 1, "abril");
+                console.log(meses);  
+
+                console.log("eliminamos a abril")
+                meses.splice(3, 1);
+                console.log(meses);                
             </code>
         </pre>
 
@@ -1462,6 +1489,114 @@
 
     <a href="cursoJavaScript.html">⏫</a>
     <hr>
+    <h2 id="find">find() en array</h2>
+    <article>
+        este metodo buscar un item dentro del array, la diferencia entre <strong>find()</strong> y
+        <strong>filter()</strong>, es que <br>
+        find() solo devuelve un solo item ose la primera coincidencia encontrada, en cambio filter te muestra todos los
+        item que cumplan
+        con la condicion <br>
+        <pre>
+            <code>
+                let products = [
+                { id: 1, name: "pc", category: "office" },
+                { id: 2, name: "keyboard", category: "office" },
+                { id: 3, name: "mouse", category: "office" },
+                { id: 4, name: "mini split", category: "refrigerator" },
+                { id: 5, name: "book", category: "stationery" },
+            
+            ]
+            
+                console.log("==== buequeda con find() ====")
+                let buscado = products.find((prod) => prod.name === "pc");
+                console.log(buscado);
+            </code>  
+        </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="reduce">reduce() en array</h2>
+    <article>
+        ejecuta una función reductora sobre cada elemento de un array, devolviendo como resultado un único valor.
+        sintaxis <br>
+        arr.reduce(callback(acumulador, valorActual[, índice[, array]])[, valorInicial])
+        <pre>
+            <code>
+            const ventas = [
+                { id: 1, cliente: "Juan", cantidad: 2, valorUnitario: 120 },
+                { id: 2, cliente: "Ana", cantidad: 2, valorUnitario: 100 },
+                { id: 3, cliente: "Pedro", cantidad: 3, valorUnitario: 100 }
+            ];
+
+            console.log("======== objeto de ventas =======");
+            console.log(ventas)
+            let totalVenta = ventas.reduce((acum, venta) => acum + (venta.cantidad * venta.valorUnitario), 0);
+            console.log(totalVenta);
+            console.log("====== totalizadmos las ventas ==========")
+            console.log(totalVenta)
+
+            </code>    
+        </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="sort">sort() en array</h2>
+    <article>
+        ordenar los elementos de un array, ordenas segun el codigo ascii <br>
+        pero si queremos que el ordena sea correcto debemos pasarle como parametros <strong>a, b</strong> dentro de 
+        uan funcion flecha <br>
+        sintaxis <br>
+        arr.sort((a, b) => a - b);
+        <pre>
+            <code>
+
+                const frutas = ["zapote", "uva", "pera", "manzana"];
+                console.log(frutas)
+                console.log("=== ordernamos las frutas =====")
+                frutas.sort()
+                console.log(frutas)
+                
+                const numero = [2, 80, 10, 50];
+                console.log(numero)
+                numero.sort()
+                console.log("=== ordernamos los numeros =====")
+                console.log(numero)
+                
+                numero.sort((a, b) => a - b)
+                console.log("=== ordernamos los numeros ascendente de forma correcta =====")
+                console.log(numero)
+                
+                numero.sort((a, b) => b - a)
+                console.log("=== ordernamos los numeros descendente de forma correcta =====")
+                console.log(numero)
+                
+                const personas = [
+                    { nombre: "Rodney", edad: 50 },
+                    { nombre: "Cecilia", edad: 38 },
+                    { nombre: "Juan", edad: 18 },
+                    { nombre: "Samuel", edad: 9 },
+                ];
+                
+                console.log("==== objeto ordenado por edad =======")
+                personas.sort((a, b) => a.edad - b.edad);
+                console.log(personas);
+
+            </code>
+        </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="every">every() compara array</h2>
+    <article>
+        prueba si todos los elementos del arreglo pasan la prueba implementada por la función proporcionada. Devuelve un valor booleano <br>
+
+    </article>        
+        
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
     <h2 id="teclado">Entrada de datos por teclado</h2>
     <article>
         para capturar por teclado tenemo que instalar el modulo <strong>prompt-sync</strong> desde la consola <br>
@@ -1538,7 +1673,7 @@
                     console.log(c);
         
                 </code>
-            </pre>
+        </pre>
         si queremos saltar elementos seria asi:
         <pre>
             <code>
@@ -1633,7 +1768,8 @@
     <h2 id="expresiones-regulares">expresiones regulares</h2>
     <article>
         Las expresiones regulares son utilizadas en la validacion de contraseñas, y transformar cadena de texto <br>
-        en esta pagina podemos generar nuestras expresiones regulares <a href="https://regexr.com/" target="_blank" rel="noopener noreferrer">regexr.com</a> <br>
+        en esta pagina podemos generar nuestras expresiones regulares <a href="https://regexr.com/" target="_blank"
+            rel="noopener noreferrer">regexr.com</a> <br>
 
         <pre>
             <code>

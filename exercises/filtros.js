@@ -32,5 +32,30 @@ console.log("=== filtramos los productos por categoria office")
 console.log(productsOffice);
 
 console.log("=== filtramos los productos difererente al id 2")
-let nuevoProducto = products.filter((prod)=> prod.id !=2 );
+let nuevoProducto = products.filter((prod) => prod.id != 2);
 console.log(nuevoProducto);
+
+
+console.log("==== buequeda con find ====")
+let buscado = products.find((prod) => prod.name === "pc");
+console.log(buscado);
+
+let personas = [
+    { name: "rondey", edad: 50 },
+    { name: "cecilia", edad: 38 },
+    { name: "juan", edad: 18 },
+    { name: "samuel", edad: 9 },
+
+]
+console.log("===== consultamos las personas mayores de eda ======")
+const mayoresEdad = personas.filter(obj => obj.edad > 18)
+const mayoresEdad2 = personas.filter((obj) => {
+    if (obj.edad > 18) {
+        return true
+    } else {
+        return false
+    }
+
+})
+console.log(mayoresEdad)
+console.log(mayoresEdad2)
