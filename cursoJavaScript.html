@@ -2154,8 +2154,113 @@
                 console.log(moduloMatematica.potencia(5, 2));
             </code>
         </pre>
-    Ahora la forma moderna para exporta e importar es la siguiente: <br>
-    
+    Ahora la forma moderna para exporta e importar en la forma moderna a partir del 2016 ES6 es la siguiente: <br>
+    le antemponemos antes del nombre de la funcion la palabra <strong>export.</strong>  <br>  
+    <pre>
+        <code>
+            
+            export function suma(a, b) {
+                return a + b;
+            }
+            
+            export function potencia(a, b) {
+                return a ** b;
+            }
+            
+            export const nombre = "matematicas avanzada";
+
+        </code>
+    </pre>
+    Esta funciones tambien lo podemos escribir en forma de funcion flecha de la siguiente forma: <br>
+    <pre>
+        <code>
+            
+            export const getnombre = () => {
+                return "Miguel de cervantes"
+            }
+            
+            export const suma2 = (a, b) => {
+                return a + b
+            }            
+
+        </code>
+    </pre>
+    y para importarlo lo usamos con las siguientes forma: <br>
+    <strong>import { suma, potencia, nombre } from "./matematicas.js";</strong> desectructuramos los modulos que necesitamos. <br>
+    <pre>
+        <code>
+
+            import { suma, potencia, nombre } from "./matematicas.js";
+            
+            console.log(suma(2, 3));
+            console.log(potencia(5, 2));
+            
+        </code>
+    </pre>
+    <strong>NOTA:</strong> para que funcione la nueva forma en nodeJS tenemos que crear un proyecto de node de la siguiente forma : <br>
+    crearemos una carpeta con el nombre <strong>modulos-es6</strong> y despues escribimos el siguiente comando: <br>
+    <pre>
+         <code>
+            npm init -y
+         </code>
+    </pre>
+    una vez se crea el archivo <strong>package.json</strong> y agregamos el <strong>"type":""module"</strong> quedando así: <br>
+    <pre>
+        <code>
+            //package.json
+
+            {
+              "name": "modulos-es6",
+              "version": "1.0.0",
+              "description": "exportar modulos ES6",
+              "main": "index.js",
+              "type": "module",
+              "scripts": {
+                "test": "echo \"Error: no test specified\" && exit 1"
+              },
+              "author": "",
+              "license": "ISC"
+            }
+
+            
+        </code>
+    </pre>
+    <strong>Nota: </strong> <br>
+    Tambien podemos usar <strong>export default</strong>, pero esto solo se puede hacer una exportacion en el archivo por ejemplo: <br>
+    por lo tanto por lo general se usa para exportar una pagina completa de react o controladores o servicios, etc <br>
+    <pre>
+        <code>
+            
+            // routes/userRoutes.js
+            import express from "express";
+            import userController from "../controllers/userController.js"; // ✅ export default
+            
+            const router = express.Router();
+            
+            router.get("/", userController.getUsers);
+            router.post("/", userController.createUser);
+            
+            export default router;
+
+            
+            // pages/UserPage.jsx
+            export default function UserPage() {
+              return (
+                <div>
+                  <h1>Gestión de Usuarios</h1>
+                  {/* Aquí podrías listar usuarios */}
+                </div>
+              );
+            }
+            
+        </code>
+    </pre>
+        📌 en Resumen : <br>
+
+        export default 👉 lo usamos para cosas principales: controladores, servicios, páginas en React. <br>
+
+        export (nombrado) 👉 lo usamos para utilidades y componentes pequeños: helpers, constantes, botones, hooks, etc. <br>
+
     </article>
 
 
