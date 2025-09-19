@@ -253,6 +253,7 @@
         <li><a href="cursoJavaScript.html#errores">manejo de erroes</a></li>
         <li><a href="cursoJavaScript.html#log">Log en nodeJS</a></li>
         <li><a href="cursoJavaScript.html#modulos">modulos en nodeJS</a></li>
+        <li><a href="cursoJavaScript.html#ESlint">ESLint</a></li>
     </ul>
 
     <a href="cursoJavaScript.html">⏫</a>
@@ -1731,7 +1732,8 @@
                     }
                 }
                 
-                const {info: {nombreUser, edadUser}}=usuarios;
+                const { id, info: { nombreUser, edadUser } } = usuarios;
+                console.log(`id de usuario: ${id}`);
                 console.log(`usuario nombre: ${nombreUser} y su edad es ${edadUser}`);
             </code>
         </pre>
@@ -1815,6 +1817,7 @@
                 
             </code>
         </pre>
+
     </article>
 
     <a href="cursoJavaScript.html">⏫</a>
@@ -2261,6 +2264,28 @@
 
         export (nombrado) 👉 lo usamos para utilidades y componentes pequeños: helpers, constantes, botones, hooks, etc. <br>
 
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="EsLint">ESLint y ErrorLens</h2>
+
+    <article>
+        Para trabajar con ESLint debemos crear un proyecto de node, y despues instalamos ESLint para generar un archivo de configuracion <br>
+        <pre>
+            <code>
+                //creamos un proyecto de node 
+                npm init -y
+
+                // instalamos ESLint
+                npm i D eslint
+
+                //instalamos las dependencia 
+                npm init @eslint/config
+
+
+            </code>
+        </pre>
     </article>
 
 

@@ -7,3 +7,4 @@ export function potencia(a, b) {
 }
 
 export const nombre = "matematicas avanzada";
+

@@ -28,7 +28,8 @@ const usuarios = {
     }
 }
 
-const { info: { nombreUser, edadUser } } = usuarios;
+const { id, info: { nombreUser, edadUser } } = usuarios;
+console.log(`id de usuario: ${id}`);
 console.log(`usuario nombre: ${nombreUser} y su edad es ${edadUser}`);
 
 console.log("==== desectructuracion de areglos ====")
@@ -80,4 +81,20 @@ const persona = {
 
 mostrarInfo(persona);
 mostrarInfo2(persona);
+
+const user2 = {
+    name: "rodney",
+    lastName: "zapata",
+    geo: {
+        lat: 2.25,
+        log: 26.4
+    }
+};
+
+
+const { name, geo: { lat, log } } = user2;
+
+console.log(name);
+console.log(lat);
+
 
