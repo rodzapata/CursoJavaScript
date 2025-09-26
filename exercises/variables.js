@@ -55,9 +55,9 @@ nameEnter = prompt("Digite su nombre");
 document.write(`su nombre es  ${nameEnter}`);
 
 //funcion saludar que es llamada desde el html
-const saludo=document.getElementById('saludar');
-saludo.onclick=function(){
-  let nombreTeclado=prompt('Digite su  nombre');
+const saludo = document.getElementById('saludar');
+saludo.onclick = function () {
+  let nombreTeclado = prompt('Digite su  nombre');
   alert(`Hola ${nombreTeclado},  encantado de verte!`);
 }
 

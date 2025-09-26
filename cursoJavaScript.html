@@ -254,6 +254,7 @@
         <li><a href="cursoJavaScript.html#log">Log en nodeJS</a></li>
         <li><a href="cursoJavaScript.html#modulos">modulos en nodeJS</a></li>
         <li><a href="cursoJavaScript.html#ESlint">ESLint</a></li>
+        <li><a href="cursoJavaScript.html#QuerySelector">Query Selector y Query Selector All</a></li>
     </ul>
 
     <a href="cursoJavaScript.html">⏫</a>
@@ -278,7 +279,7 @@
 
     <a href="cursoJavaScript.html">⏫</a>
     <hr>
-    <h2 id="Variables">Variables</h2>
+    <h2 id="variables">Variables</h2>
     <article>
         esta pagina es importantes para seguir paso a paso el curso :
         para definir las variables se recomienda utilizar <strong>let</strong> y dejar de utilizar <strong>var</strong>,
@@ -296,6 +297,22 @@
 
         </code>
      </pre>
+        <strong>NOTA:</strong> las comillas inveridas debn estar al lado de le letra <strong>P</strong>, pero si no sale
+        escribes el codigo ascii <strong>alt + 96</strong> <br>
+        <pre>
+            <code>
+
+                let annoActual = new Date().getFullYear()
+                let annoNacimiento = 1975
+                console.log(annoActual);
+                console.log(`la edad es ${calcularEdad()}`)
+                
+                function calcularEdad() {
+                    return annoActual - annoNacimiento;
+                }
+                
+            </code>
+        </pre>
         Tambien podemos convertir una frase en un arreglo, por ejemplo la palabra que contega el contenido "learn
         englihs and Javascrip too" <br>
         donde el separador de cada posicion del arreglo será el espacio en blanco, quedando de la siguiente forma: <br>
@@ -2126,7 +2143,8 @@
     <h2 id="modulos">modulos</h2>
 
     <article>
-        En la forma antigua se debia export los modulos de la siguiente forma usando <strong>module.export{suma, potencia }</strong> <br>
+        En la forma antigua se debia export los modulos de la siguiente forma usando <strong>module.export{suma,
+            potencia }</strong> <br>
         y en la importacion usamos <strong>const moduloMatematica = require("./matematicas.js")</strong> <br>
         <pre>
             <code>
@@ -2157,9 +2175,9 @@
                 console.log(moduloMatematica.potencia(5, 2));
             </code>
         </pre>
-    Ahora la forma moderna para exporta e importar en la forma moderna a partir del 2016 ES6 es la siguiente: <br>
-    le antemponemos antes del nombre de la funcion la palabra <strong>export.</strong>  <br>  
-    <pre>
+        Ahora la forma moderna para exporta e importar en la forma moderna a partir del 2016 ES6 es la siguiente: <br>
+        le antemponemos antes del nombre de la funcion la palabra <strong>export.</strong> <br>
+        <pre>
         <code>
             
             export function suma(a, b) {
@@ -2174,8 +2192,8 @@
 
         </code>
     </pre>
-    Esta funciones tambien lo podemos escribir en forma de funcion flecha de la siguiente forma: <br>
-    <pre>
+        Esta funciones tambien lo podemos escribir en forma de funcion flecha de la siguiente forma: <br>
+        <pre>
         <code>
             
             export const getnombre = () => {
@@ -2188,9 +2206,10 @@
 
         </code>
     </pre>
-    y para importarlo lo usamos con las siguientes forma: <br>
-    <strong>import { suma, potencia, nombre } from "./matematicas.js";</strong> desectructuramos los modulos que necesitamos. <br>
-    <pre>
+        y para importarlo lo usamos con las siguientes forma: <br>
+        <strong>import { suma, potencia, nombre } from "./matematicas.js";</strong> desectructuramos los modulos que
+        necesitamos. <br>
+        <pre>
         <code>
 
             import { suma, potencia, nombre } from "./matematicas.js";
@@ -2200,15 +2219,17 @@
             
         </code>
     </pre>
-    <strong>NOTA:</strong> para que funcione la nueva forma en nodeJS tenemos que crear un proyecto de node de la siguiente forma : <br>
-    crearemos una carpeta con el nombre <strong>modulos-es6</strong> y despues escribimos el siguiente comando: <br>
-    <pre>
+        <strong>NOTA:</strong> para que funcione la nueva forma en nodeJS tenemos que crear un proyecto de node de la
+        siguiente forma : <br>
+        crearemos una carpeta con el nombre <strong>modulos-es6</strong> y despues escribimos el siguiente comando: <br>
+        <pre>
          <code>
             npm init -y
          </code>
     </pre>
-    una vez se crea el archivo <strong>package.json</strong> y agregamos el <strong>"type":""module"</strong> quedando así: <br>
-    <pre>
+        una vez se crea el archivo <strong>package.json</strong> y agregamos el <strong>"type":""module"</strong>
+        quedando así: <br>
+        <pre>
         <code>
             //package.json
 
@@ -2228,10 +2249,12 @@
             
         </code>
     </pre>
-    <strong>Nota: </strong> <br>
-    Tambien podemos usar <strong>export default</strong>, pero esto solo se puede hacer una exportacion en el archivo por ejemplo: <br>
-    por lo tanto por lo general se usa para exportar una pagina completa de react o controladores o servicios, etc <br>
-    <pre>
+        <strong>Nota: </strong> <br>
+        Tambien podemos usar <strong>export default</strong>, pero esto solo se puede hacer una exportacion en el
+        archivo por ejemplo: <br>
+        por lo tanto por lo general se usa para exportar una pagina completa de react o controladores o servicios, etc
+        <br>
+        <pre>
         <code>
             
             // routes/userRoutes.js
@@ -2262,16 +2285,18 @@
 
         export default 👉 lo usamos para cosas principales: controladores, servicios, páginas en React. <br>
 
-        export (nombrado) 👉 lo usamos para utilidades y componentes pequeños: helpers, constantes, botones, hooks, etc. <br>
+        export (nombrado) 👉 lo usamos para utilidades y componentes pequeños: helpers, constantes, botones, hooks, etc.
+        <br>
 
     </article>
 
     <a href="cursoJavaScript.html">⏫</a>
     <hr>
-    <h2 id="EsLint">ESLint y ErrorLens</h2>
+    <h2 id="ESlint">ESLint y ErrorLens</h2>
 
     <article>
-        Para trabajar con ESLint debemos crear un proyecto de node, y despues instalamos ESLint para generar un archivo de configuracion <br>
+        Para trabajar con ESLint debemos crear un proyecto de node, y despues instalamos ESLint para generar un archivo
+        de configuracion <br>
         <pre>
             <code>
                 //creamos un proyecto de node 
@@ -2288,7 +2313,22 @@
         </pre>
     </article>
 
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="QuerySelector">Query Selector y Query Selector All</h2>
 
+    <article>
+        si usamos querySelector() escojemos al primero que cumpla la condicion, pero si queremos ser mas expecifico debemos usar:  <br>
+        querySelectorAll() <br>
+        <pre>
+            <code>
+                document.querySelector(".caja").innerText="prueba";
+                document.querySelectorAll(".caja")[2].innerText="prueba2";
+            </code>
+        </pre>
+    </article>
+    <!-- Comentario en html -->
+     
 </body>
 
 </html>
