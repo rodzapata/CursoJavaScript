@@ -255,6 +255,8 @@
         <li><a href="cursoJavaScript.html#modulos">modulos en nodeJS</a></li>
         <li><a href="cursoJavaScript.html#ESlint">ESLint</a></li>
         <li><a href="cursoJavaScript.html#QuerySelector">Query Selector y Query Selector All</a></li>
+        <li><a href="cursoJavaScript.html#typescript_instalacion">TypeScrip Instalacion</a></li>
+
     </ul>
 
     <a href="cursoJavaScript.html">⏫</a>
@@ -2329,6 +2331,57 @@
     </article>
     <!-- Comentario en html -->
      
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="TypeScript_instalacion">TypeScript instalacion </h2>
+
+    <article>
+        creamos un proyecto llamadao <strong>proyectoTS</strong> y creamos un archivo index.htlm y script.ts <br>
+        para instalar en TypeScript lo instalamos desde la consola: <br>
+        <pre>
+            <code>
+                npm install -g typescript
+            </code>
+        </pre>
+        el parametro -g es para instalarlo de forma global, si nada mas se quiere en el proyecto especifico se coloca <strong>-D</strong> <br>
+        para saber si la version de typescript quedó instalada escribo: <br>
+        <pre>
+            <code>
+                tsc -v
+            </code>
+        </pre>
+        para que el archivo script.ts se convierta en script.js que es el que reconoce el navegador hay realiazar: <br>
+        
+        <pre>
+            <code>
+                tsc script.ts
+            </code>
+        </pre>
+        <strong>modo observador</strong> genera un nuevo archivo con la extension .js y cada vez que cambio algo en el .ts se reescribe en el .js <br>
+        <pre>
+            <code>
+                tsc script.ts -w
+            </code>
+        </pre>
+        para que observer todos los proyectos los archivos .ts del proyecto
+        <pre>
+            <code>
+                tsc -init
+            </code>
+        </pre>
+        una vez inicializado el proyecto de typescript, esto genera un archivo de configuracion <strong>isconfig.json</strong> <br>
+        ahora si al ejecutar el siguiente comando funciona para todos los <strong>ts</strong> existentes en el proyecto. <br>
+        <pre>
+            <code>
+                tsc -w
+            </code>
+        </pre>
+
+    </article>
+
+
+
 </body>
 
 </html>
