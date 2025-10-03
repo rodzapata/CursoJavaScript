@@ -256,6 +256,8 @@
         <li><a href="cursoJavaScript.html#ESlint">ESLint</a></li>
         <li><a href="cursoJavaScript.html#QuerySelector">Query Selector y Query Selector All</a></li>
         <li><a href="cursoJavaScript.html#typescript_instalacion">TypeScrip Instalacion</a></li>
+        <li><a href="cursoJavaScript.html#genericos">TypeScrip Tipos Genericos</a></li>
+        <li><a href="cursoJavaScript.html#genericos-herencias">TypeScrip Genericos Aplicados a clases abstractas y Herencias</a></li>
 
     </ul>
 
@@ -2377,9 +2379,97 @@
                 tsc -w
             </code>
         </pre>
+        <strong>NOTA:</strong> <br>
+        para que me funcionara en el navegador me tocó modificar el <strong>tsconfig.json</strong> <br>
+        <pre>
+            <code>
+                {
+                  "compilerOptions": {
+                    "module": "esnext", 
+                    "target": "es6"
+                  }
+                }
+
+            </code>
+        </pre>
+        <strong>nota:</strong>
+        si queremos ejecutar codigo de typescript sin tener que estar conviertiendo a JavaScript hay que instalar: <br>
+        <pre>
+            <code>
+                npm install -g ts-node
+            </code>
+        </pre>
+        existe un link de <a href="https://www.youtube.com/watch?v=eLVAIxpQotw" target="_blank" rel="noopener noreferrer">POO en typescript por Hector de leon </a> <br>
+        para ejecutarlo abrimos una teminal y escribimos <strong>ts-node prueba.ts</strong> <br>
+        Tambien podemos encontrar un curso de typescript <a href="https://www.youtube.com/watch?v=sBgcHD1JsL4&t=269s" target="_blank" rel="noopener noreferrer">typescript Amazaing Code</a> <br>
 
     </article>
 
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="genericos">TypeScript Tipos de Genericos </h2>
+
+    <article>
+        En POO usamos clases, interfaces y métodos para modelar objetos. <br>
+        Un genérico nos permite crear código reutilizable y flexible, donde el tipo de dato no está fijo, sino que se define al momento de usar la clase o función. <br>
+        <pre>
+            <code>
+                
+                class CajaDeTexto {
+                    private _contenido: string;
+                
+                    constructor(contenido: string) {
+                        this._contenido = contenido;
+                
+                    }
+                    obtContenido(): string {
+                       return this._contenido;
+                    }
+                
+                }
+                
+                const texto = new CajaDeTexto("soy un texto");
+                console.log(texto.obtContenido());
+            </code>
+        </pre>
+        creamos una clase <strong>CajaDeTexto</strong>  que recibe como parametro un texto y contiene un metodo <strong>obtConido</strong>, que muestra su contenido. <br>
+        pero si queremo psarle como parametro un numero o un boolean, tendriamos que hacer varias copias de las clases una para cada tipo. <br>
+        por lo tando lo mejor es que el parametro sea <strong>T</strong>, donde el tipo es generico. <br>
+        <pre>
+            <code>
+                
+                class Caja&lt;T> {
+                    private _contenido: T;
+                
+                    constructor(contenido: T) {
+                        this._contenido = contenido;
+                
+                    }
+                    obtContenido(): T {
+                        return this._contenido;
+                    }
+                
+                }
+                
+                const cajaTexto1 = new Caja("soy un texto");
+                const cajaNumber = new Caja(25);
+                const cajaBoolean = new Caja(true);
+                console.log(cajaTexto1.obtContenido());
+                console.log(cajaNumber.obtContenido());
+                console.log(cajaBoolean.obtContenido());
+
+
+            </code>
+        </pre>
+
+    </article>
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="genericos-herencias">TypeScript Genericos aplicados a clases asbtractas y Herencias</h2>
+
+    <article>
+        
+    </article>
 
 
 </body>
