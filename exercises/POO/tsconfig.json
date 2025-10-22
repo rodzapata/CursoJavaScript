@@ -1,44 +1,31 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
+    /* 📦 Directorios */
+    "rootDir": "./src",              // Carpeta de entrada de tus archivos .ts
+    "outDir": "./dist",              // Carpeta de salida con los .js compilados
 
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
-    "types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
+    /* ⚙️ Target y módulo */
+    "target": "es2022",              // Genera código moderno (puedes usar ES2015, ES2017, ESNext, etc.)
+    "module": "esnext",              // Usa import/export nativos
+    "moduleResolution": "node",      // Resolución compatible con Node.js
 
-    // Other Outputs
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
+    /* 🧠 Calidad del código */
+    "strict": true,                  // Activa todas las comprobaciones estrictas
+    "noImplicitAny": true,           // Obliga a declarar tipos explícitos
+    "forceConsistentCasingInFileNames": true, // Evita errores de mayúsculas/minúsculas
+    "skipLibCheck": true,            // Mejora rendimiento ignorando verificación de tipos en dependencias
 
-    // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
+    /* 💡 Compatibilidad */
+    "esModuleInterop": true,         // Permite usar importaciones CommonJS sin error
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,       // Permite importar archivos JSON
 
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
-    "strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
-    "skipLibCheck": true,
-  }
+    /* 🪄 Extras útiles */
+    "sourceMap": true,               // Genera mapas para depuración
+    "removeComments": false,         // Mantiene comentarios en el código generado
+    "declaration": true,             // Genera archivos .d.ts (útil si exportas una librería)
+    "pretty": true                   // Mejora la legibilidad de errores en consola
+  },
+  "include": ["src/**/*"],            // Compila todo lo que esté dentro de /src
+  "exclude": ["node_modules", "dist"] // No compila dependencias ni la salida
 }

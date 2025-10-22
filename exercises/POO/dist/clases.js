@@ -1,6 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class Persona {
+class Personas {
     _name;
     _age;
     constructor(name, age) {
@@ -26,8 +25,8 @@ class Persona {
         console.log(`mi nombre es ${this._name} y edad ${this._age}`);
     }
 }
-const p = new Persona("rodney", 50);
+const p = new Personas("rodney", 50);
 p.saludar(); // Hola, soy Ana...
-p.age = 51;
+p.age = 52;
 p.saludar(); // Hola, soy Ana...
 //# sourceMappingURL=clases.js.map

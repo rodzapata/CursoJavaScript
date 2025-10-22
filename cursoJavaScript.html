@@ -255,7 +255,7 @@
         <li><a href="cursoJavaScript.html#modulos">modulos en nodeJS</a></li>
         <li><a href="cursoJavaScript.html#ESlint">ESLint</a></li>
         <li><a href="cursoJavaScript.html#QuerySelector">Query Selector y Query Selector All</a></li>
-        <li><a href="cursoJavaScript.html#typescript_instalacion">TypeScrip Instalacion</a></li>
+        <li><a href="cursoJavaScript.html#typescript-instalacion">TypeScrip Instalacion</a></li>
         <li><a href="cursoJavaScript.html#genericos">TypeScrip Tipos Genericos</a></li>
         <li><a href="cursoJavaScript.html#genericos-herencias">TypeScrip Genericos Aplicados a clases abstractas y Herencias</a></li>
 
@@ -2453,7 +2453,7 @@
 
     <a href="cursoJavaScript.html">⏫</a>
     <hr>
-    <h2 id="TypeScript_instalacion">TypeScript instalacion </h2>
+    <h2 id="typescript-instalacion">TypeScript instalacion </h2>
 
     <article>
         creamos un proyecto llamadao <strong>proyectoTS</strong> y creamos un archivo index.htlm y script.ts <br>
@@ -2461,6 +2461,8 @@
         <pre>
             <code>
                 npm install -g typescript
+                npm install typescript --save-dev
+
             </code>
         </pre>
         el parametro -g es para instalarlo de forma global, si nada mas se quiere en el proyecto especifico se coloca <strong>-D</strong> <br>
@@ -2516,8 +2518,28 @@
                 npm install -g ts-node
             </code>
         </pre>
-        existe un link de <a href="https://www.youtube.com/watch?v=eLVAIxpQotw" target="_blank" rel="noopener noreferrer">POO en typescript por Hector de leon </a> <br>
+        <strong>NOTA</strong> <br>
+        para compilara el proyecto completo 
+        <pre>
+            <code>
+                npx tsc
+            </code>
+        </pre>
+        si queremos que el codigo se ejecute desde <strong>ts-node</strong> modificamos el tsCongig <br>
+        <pre>
+            <code>
+                {
+                  "compilerOptions": {
+                    "module": "esnext",
+                    "target": "esnext",
+                  }
+                }
+
+            </code>
+        </pre>
         para ejecutarlo abrimos una teminal y escribimos <strong>ts-node prueba.ts</strong> <br>
+
+        existe un link de <a href="https://www.youtube.com/watch?v=eLVAIxpQotw" target="_blank" rel="noopener noreferrer">POO en typescript por Hector de leon </a> <br>
         Tambien podemos encontrar un curso de typescript <a href="https://www.youtube.com/watch?v=sBgcHD1JsL4&t=269s" target="_blank" rel="noopener noreferrer">typescript Amazaing Code</a> <br>
 
     </article>

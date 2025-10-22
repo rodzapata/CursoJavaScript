@@ -1,4 +1,4 @@
-class Persona {
+class Personas {
     private _name: string
     private _age: number
 
@@ -31,9 +31,9 @@ class Persona {
 }
 
 
-const p = new Persona("rodney", 50);
+const p = new Personas("rodney", 50);
 p.saludar(); // Hola, soy Ana...
-p.age = 51;
+p.age = 52;
 p.saludar(); // Hola, soy Ana...
 
 
