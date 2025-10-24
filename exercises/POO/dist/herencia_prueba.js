@@ -22,6 +22,6 @@ const u = new Usuarios("rodney");
 //u._nombre="modifica el nombre" ;
 console.log(u.nombre);
 console.log(u.saludar());
-Usuarios.prototype.saludar = function () { return "modificando por marco"; };
+Usuarios.prototype.saludar = function () { return "modificando saludo"; };
 console.log(u.saludar());
 //# sourceMappingURL=herencia_prueba.js.map

@@ -2541,7 +2541,37 @@
 
         existe un link de <a href="https://www.youtube.com/watch?v=eLVAIxpQotw" target="_blank" rel="noopener noreferrer">POO en typescript por Hector de leon </a> <br>
         Tambien podemos encontrar un curso de typescript <a href="https://www.youtube.com/watch?v=sBgcHD1JsL4&t=269s" target="_blank" rel="noopener noreferrer">typescript Amazaing Code</a> <br>
+        <strong>Nota</strong> <br>
+        El proyecto que de type script que hice con vite me mostraba error cuando creaba las clases <strong>cliente.ts</strong> que está dentro de <strong>domain</strong> <br>
+        el error consistia en cambiar dentro del archivo <strong>tsconfig.json</strong> la propiedad <strong>erasableSyntaxOnly</strong> y colocarla en <strong>false</strong> <br>
+        quedando de la siguiente forma: <br>
+        <pre>
+            <code>
+                {
+                  "compilerOptions": {
+                    "erasableSyntaxOnly": false,
+                  }
+                }
+               
+            </code>
+        </pre>
+        tambie me salia error en la primera linea del siguiente codigo : <br>
+        <pre>
+            <code>
+                import { ReglaDescuento } from '../domain/descuento';
+                import { Factura } from '../domain/factura';
+                
+                export class ServicioDescuento {
+                  constructor(private regla: ReglaDescuento) {}
+                
+                  calcularDescuento(factura: Factura): number {
+                    return this.regla.aplicar(factura);
+                  }
+                }                
 
+            </code>
+        </pre>
+        se arrego nuevamente cambiando otra propiedad en el tscofig <strong>"verbatimModuleSyntax": false,</strong>
     </article>
 
     <a href="cursoJavaScript.html">⏫</a>
