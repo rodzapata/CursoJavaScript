@@ -221,6 +221,7 @@
         <li><a href="cursoJavaScript.html#nulos">valores nulos</a></li>
         <li><a href="cursoJavaScript.html#compuesto">Datos compuesto</a></li>
         <li><a href="cursoJavaScript.html#arrays">arrays</a></li>
+        <li><a href="cursoJavaScript.html#enum">ENUM</a></li>
         <li><a href="cursoJavaScript.html#filtros">Filtros en arrays</a></li>
         <li><a href="cursoJavaScript.html#ciclos">ciclos</a></li>
         <li><a href="cursoJavaScript.html#dom">manipulacion del DOM</a></li>
@@ -754,6 +755,27 @@
             </code>
         </pre>
     </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="enum">ENUM </h2>
+    <article>
+        son muy utilizados en la arquitectura DDD para trabajar con valores inmutable y bien definido.  <br>
+        <pre>
+            <code>
+                const LEVELS = Object.freeze({
+                    NORMAL: "normal",
+                    URGENT: "urgent",
+                    BLOKING: "bloking"
+                })
+                
+                console.log(LEVELS.NORMAL)
+                
+            </code>
+        </pre>
+
+    </article>
+
 
     <a href="cursoJavaScript.html">⏫</a>
     <hr>
