@@ -228,6 +228,8 @@
         <li><a href="cursoJavaScript.html#json">Json</a></li>
         <li><a href="cursoJavaScript.html#parse">Json parse()</a></li>
         <li><a href="cursoJavaScript.html#prototipo">Prototipo de Instancias</a></li>
+        <li><a href="cursoJavaScript.html#arrow-function">arrow Function</a></li>
+
         <li><a href="cursoJavaScript.html#map">metodo map() en array</a></li>
         <li><a href="cursoJavaScript.html#at">metodo at() en array</a></li>
         <li><a href="cursoJavaScript.html#push">metodo push() en array</a></li>
@@ -258,7 +260,8 @@
         <li><a href="cursoJavaScript.html#QuerySelector">Query Selector y Query Selector All</a></li>
         <li><a href="cursoJavaScript.html#typescript-instalacion">TypeScrip Instalacion</a></li>
         <li><a href="cursoJavaScript.html#genericos">TypeScrip Tipos Genericos</a></li>
-        <li><a href="cursoJavaScript.html#genericos-herencias">TypeScrip Genericos Aplicados a clases abstractas y Herencias</a></li>
+        <li><a href="cursoJavaScript.html#genericos-herencias">TypeScrip Genericos Aplicados a clases abstractas y
+                Herencias</a></li>
 
     </ul>
 
@@ -760,7 +763,7 @@
     <hr>
     <h2 id="enum">ENUM </h2>
     <article>
-        son muy utilizados en la arquitectura DDD para trabajar con valores inmutable y bien definido.  <br>
+        son muy utilizados en la arquitectura DDD para trabajar con valores inmutable y bien definido. <br>
         <pre>
             <code>
                 const LEVELS = Object.freeze({
@@ -1317,6 +1320,113 @@
         JavaScript es un lenguaje basado en prototipos, por lo tanto entender el objeto <strong>prototype</strong>
         es uno de los conceptos más importantes que los profesionales de JavaScript necesitan saber.
     </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="arrow-function">arrow Function</h2>
+    <article>
+        Las arrow functions (funciones flecha) son una forma más concisa de escribir funciones en JavaScript, <br>
+        introducidas en ES6. Además de la sintaxis más corta, tienen una diferencia importante con las funciones
+        tradicionales: <br>
+        no vinculan su propio this. <br><br>
+        En el contexto de React y Next.js, las usarás constantemente, especialmente como callbacks en métodos de array y
+        <br>
+        como componentes funcionales. <br><br>
+        <pre>
+            <code>
+            function suma(a, b) {
+                return a + b;
+            }
+            
+            
+            //suma con arrowfuction completa
+            const sumaArrow = (a, b) => {
+                return a + b;
+            }
+            
+            //ahora con retorno implicito en una linea
+            const sinRetornoImplicito = (a, b) => a + b;
+            
+            //con un solo parametro puede omitir los parentesis
+            const duplicarNumeroUnParametro = num => num * 2;
+            
+            // Con cero parámetros, necesitas paréntesis vacíos
+            const sinParametros = () => new Date();
+            
+            // Objeto de retorno implícito (debes envolver en paréntesis)
+            // funcion que crear_usuario, recibe dos parametro y devuelve el objeto
+            const crearUsuario = (nombre, apellido) => (
+                {
+                    nombre: nombre,
+                    apellido: apellido
+                }
+            )
+            
+            console.log(crearUsuario("rodney","zapata"));            
+
+            </code>
+        </pre>
+        <strong>Nota:</strong>
+        <pre>
+            <code>
+            (parametros) => {
+              return expresion;
+            }
+            
+            </code>
+        </pre>
+        Si tiene un solo parámetro, los paréntesis son opcionales <br>
+        Si tiene una sola línea con return, {} y return son opcionales <br>
+        <strong>ejercicio 1</strong>
+        <pre>
+            <code>
+            //covertir a arrow function
+            // 1. Función que filtra números mayores a 10
+            function filtrarMayores10(numeros) {
+                return numeros.filter(function (numero) {
+                    return numero > 10;
+                });
+            }
+            
+            const filtrarMayores10Arrow = numeros => numeros.filter(numero => numero > 10);
+            console.log("funcion 1 ", filtrarMayores10Arrow([2, 10, 15,25, 30]));            
+            </code>
+        </pre>
+
+        <strong>ejercicio 2</strong>
+        <pre>
+            <code>
+            // 2. Función que transforma nombres a mayúsculas
+            function convertirAMayusculas(nombres) {
+                return nombres.map(function (nombre) {
+                    return nombre.toUpperCase();
+                });
+            }
+            
+            const convertirAMayusculasArrow = nombres => nombres.map(nombre => nombre.toUpperCase());
+            console.log("funcion 2 ", convertirAMayusculasArrow(['rodney', 'zapata', 'palacio']));
+
+            </code>
+        </pre>
+
+        <strong>ejercicio 3</strong>
+        <pre>
+            <code>
+                // 3. Función que suma todos los elementos de un array
+                function sumarArray(numeros) {
+                    return numeros.reduce(function (total, numero) {
+                        return total + numero;
+                    }, 0);
+                }
+                
+                const sumarArrayArrow = numeros => numeros.reduce((total, numero) => total + numero, 0);
+                console.log("funcion 3 ", sumarArrayArrow([1, 2, 3, 4]));
+                
+            </code>
+        </pre>
+
+    </article>
+
 
     <a href="cursoJavaScript.html">⏫</a>
     <hr>
@@ -2010,9 +2120,9 @@
 
                 </code>
             </pre>
-            pero si queremos el mismo resultado no con un array, sino con un objeto usuario , entonces debemos usar Map <br>
-            para que que se genere una clave y valor y sean unicos <br>
-            <pre>
+        pero si queremos el mismo resultado no con un array, sino con un objeto usuario , entonces debemos usar Map <br>
+        para que que se genere una clave y valor y sean unicos <br>
+        <pre>
                 <code>
                     
                     const usuarios = [
@@ -2141,8 +2251,9 @@
         El componente se monta → se ejecuta el fetch.
         Antes de que el fetch termine, el componente se desmonta (por ejemplo, el usuario navega a otra página).
         La promesa se resuelve, y React intenta ejecutar setUsuarios(data) en un componente que ya no existe.
-        En este caso creamos una variable <strong>isMounted</strong> en verdadero y cuando todo finaliza lo colocamos en falso,
-        de tal forma que si 
+        En este caso creamos una variable <strong>isMounted</strong> en verdadero y cuando todo finaliza lo colocamos en
+        falso,
+        de tal forma que si
         <pre>
             <code>
                 //desde React nueva forma usando TryCatch
@@ -2168,8 +2279,9 @@
                 }, []);
             </code>
         </pre>
-        el codigo mas moderno recomendado en la documentacion de react es usar un controller donde el navegador y hay un error
-        en la consulta la cancela 
+        el codigo mas moderno recomendado en la documentacion de react es usar un controller donde el navegador y hay un
+        error
+        en la consulta la cancela
         <pre>
             <code>
                 
@@ -2461,7 +2573,8 @@
     <h2 id="QuerySelector">Query Selector y Query Selector All</h2>
 
     <article>
-        si usamos querySelector() escojemos al primero que cumpla la condicion, pero si queremos ser mas expecifico debemos usar:  <br>
+        si usamos querySelector() escojemos al primero que cumpla la condicion, pero si queremos ser mas expecifico
+        debemos usar: <br>
         querySelectorAll() <br>
         <pre>
             <code>
@@ -2471,7 +2584,7 @@
         </pre>
     </article>
     <!-- Comentario en html -->
-     
+
 
     <a href="cursoJavaScript.html">⏫</a>
     <hr>
@@ -2487,7 +2600,8 @@
 
             </code>
         </pre>
-        el parametro -g es para instalarlo de forma global, si nada mas se quiere en el proyecto especifico se coloca <strong>-D</strong> <br>
+        el parametro -g es para instalarlo de forma global, si nada mas se quiere en el proyecto especifico se coloca
+        <strong>-D</strong> <br>
         para saber si la version de typescript quedó instalada escribo: <br>
         <pre>
             <code>
@@ -2495,13 +2609,14 @@
             </code>
         </pre>
         para que el archivo script.ts se convierta en script.js que es el que reconoce el navegador hay realiazar: <br>
-        
+
         <pre>
             <code>
                 tsc script.ts
             </code>
         </pre>
-        <strong>modo observador</strong> genera un nuevo archivo con la extension .js y cada vez que cambio algo en el .ts se reescribe en el .js <br>
+        <strong>modo observador</strong> genera un nuevo archivo con la extension .js y cada vez que cambio algo en el
+        .ts se reescribe en el .js <br>
         <pre>
             <code>
                 tsc script.ts -w
@@ -2513,8 +2628,10 @@
                 tsc -init
             </code>
         </pre>
-        una vez inicializado el proyecto de typescript, esto genera un archivo de configuracion <strong>isconfig.json</strong> <br>
-        ahora si al ejecutar el siguiente comando funciona para todos los <strong>ts</strong> existentes en el proyecto. <br>
+        una vez inicializado el proyecto de typescript, esto genera un archivo de configuracion
+        <strong>isconfig.json</strong> <br>
+        ahora si al ejecutar el siguiente comando funciona para todos los <strong>ts</strong> existentes en el proyecto.
+        <br>
         <pre>
             <code>
                 tsc -w
@@ -2541,7 +2658,7 @@
             </code>
         </pre>
         <strong>NOTA</strong> <br>
-        para compilara el proyecto completo 
+        para compilara el proyecto completo
         <pre>
             <code>
                 npx tsc
@@ -2561,11 +2678,15 @@
         </pre>
         para ejecutarlo abrimos una teminal y escribimos <strong>ts-node prueba.ts</strong> <br>
 
-        existe un link de <a href="https://www.youtube.com/watch?v=eLVAIxpQotw" target="_blank" rel="noopener noreferrer">POO en typescript por Hector de leon </a> <br>
-        Tambien podemos encontrar un curso de typescript <a href="https://www.youtube.com/watch?v=sBgcHD1JsL4&t=269s" target="_blank" rel="noopener noreferrer">typescript Amazaing Code</a> <br>
+        existe un link de <a href="https://www.youtube.com/watch?v=eLVAIxpQotw" target="_blank"
+            rel="noopener noreferrer">POO en typescript por Hector de leon </a> <br>
+        Tambien podemos encontrar un curso de typescript <a href="https://www.youtube.com/watch?v=sBgcHD1JsL4&t=269s"
+            target="_blank" rel="noopener noreferrer">typescript Amazaing Code</a> <br>
         <strong>Nota</strong> <br>
-        El proyecto que de type script que hice con vite me mostraba error cuando creaba las clases <strong>cliente.ts</strong> que está dentro de <strong>domain</strong> <br>
-        el error consistia en cambiar dentro del archivo <strong>tsconfig.json</strong> la propiedad <strong>erasableSyntaxOnly</strong> y colocarla en <strong>false</strong> <br>
+        El proyecto que de type script que hice con vite me mostraba error cuando creaba las clases
+        <strong>cliente.ts</strong> que está dentro de <strong>domain</strong> <br>
+        el error consistia en cambiar dentro del archivo <strong>tsconfig.json</strong> la propiedad
+        <strong>erasableSyntaxOnly</strong> y colocarla en <strong>false</strong> <br>
         quedando de la siguiente forma: <br>
         <pre>
             <code>
@@ -2602,7 +2723,8 @@
 
     <article>
         En POO usamos clases, interfaces y métodos para modelar objetos. <br>
-        Un genérico nos permite crear código reutilizable y flexible, donde el tipo de dato no está fijo, sino que se define al momento de usar la clase o función. <br>
+        Un genérico nos permite crear código reutilizable y flexible, donde el tipo de dato no está fijo, sino que se
+        define al momento de usar la clase o función. <br>
         <pre>
             <code>
                 
@@ -2623,8 +2745,10 @@
                 console.log(texto.obtContenido());
             </code>
         </pre>
-        creamos una clase <strong>CajaDeTexto</strong>  que recibe como parametro un texto y contiene un metodo <strong>obtConido</strong>, que muestra su contenido. <br>
-        pero si queremo psarle como parametro un numero o un boolean, tendriamos que hacer varias copias de las clases una para cada tipo. <br>
+        creamos una clase <strong>CajaDeTexto</strong> que recibe como parametro un texto y contiene un metodo
+        <strong>obtConido</strong>, que muestra su contenido. <br>
+        pero si queremo psarle como parametro un numero o un boolean, tendriamos que hacer varias copias de las clases
+        una para cada tipo. <br>
         por lo tando lo mejor es que el parametro sea <strong>T</strong>, donde el tipo es generico. <br>
         <pre>
             <code>
@@ -2659,7 +2783,7 @@
     <h2 id="genericos-herencias">TypeScript Genericos aplicados a clases asbtractas y Herencias</h2>
 
     <article>
-        
+
     </article>
 
 
