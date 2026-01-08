@@ -58,3 +58,28 @@ function sumarArray(numeros) {
 
 const sumarArrayArrow = numeros => numeros.reduce((total, numero) => total + numero, 0);
 console.log("funcion 3 ", sumarArrayArrow([1, 2, 3, 4]));
+
+// 4. funcion que suma los elementos mayores que 10 de un array
+function sumarMayores10(numeros) {
+    return numeros.reduce(function (total, numero) {
+        if (numero > 10) {
+            return total + numero;
+        }
+        return total;
+    }, 0);
+}
+
+const sumarMayores10Arrow = numeros => numeros.reduce((total, numero) => {
+    if (numero > 10) {
+        return total + numero;
+    }
+    return total;
+}, 0);
+console.log("funcion 4 ", sumarMayores10Arrow([11, 12, 3, 4]));
+
+//otra alternativa mas corta podria ser:
+const sumarMayores10Arrow2 = numeros =>
+  numeros.reduce(
+    (total, numero) => numero > 10 ? total + numero : total,
+    0
+  );

@@ -1425,6 +1425,27 @@
             </code>
         </pre>
 
+        <strong>ejercicio 4 avanzado, propuesto por la IA</strong>
+        <pre>
+            <code>
+                const sumarMayores10Arrow = numeros => numeros.reduce((total, numero) => {
+                    if (numero > 10) {
+                        return total + numero;
+                    }
+                    return total;
+                }, 0);
+                console.log("funcion 4 ", sumarMayores10Arrow([11, 12, 3, 4]));
+                
+                //otra alternativa mas corta podria ser:
+                const sumarMayores10Arrow2 = numeros =>
+                  numeros.reduce(
+                    (total, numero) => numero > 10 ? total + numero : total,
+                    0
+                  );
+                
+            </code>
+        </pre>
+
     </article>
 
 
@@ -1446,6 +1467,15 @@
                 let duplicado=numeros.map(function (x){
                     return x*2;
                 })
+            </code>
+        </pre>
+        usando arrow funcion quedaria de la siguiente forma:
+        <pre>
+            <code>
+                numeros=[2,3,4];
+    
+                let duplicado=numeros.map((x) => x * 2)
+
             </code>
         </pre>
 

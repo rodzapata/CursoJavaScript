@@ -1,5 +1,10 @@
 let numeros = [4, 9, 16];
 
+let duplicado1= numeros.map(function(x) {
+    return x *2
+})
+console.log(duplicado1);
+
 let duplicado = numeros.map((x) => x * 2);
 let raices = numeros.map(Math.sqrt);
 console.log(numeros);
@@ -23,3 +28,5 @@ console.log(frutas);
 console.log(frutas2);
 
 //nos crea un array numero2[9,16]
+
+
