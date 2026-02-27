@@ -223,11 +223,14 @@
         <li><a href="cursoJavaScript.html#arrays">arrays</a></li>
         <li><a href="cursoJavaScript.html#enum">ENUM</a></li>
         <li><a href="cursoJavaScript.html#filtros">Filtros en arrays</a></li>
+        <li><a href="cursoJavaScript.html#condicionales">condicionales</a></li>
         <li><a href="cursoJavaScript.html#ciclos">ciclos</a></li>
+        
         <li><a href="cursoJavaScript.html#dom">manipulacion del DOM</a></li>
         <li><a href="cursoJavaScript.html#json">Json</a></li>
         <li><a href="cursoJavaScript.html#parse">Json parse()</a></li>
         <li><a href="cursoJavaScript.html#prototipo">Prototipo de Instancias</a></li>
+        <li><a href="cursoJavaScript.html#funciones">funciones</a></li>
         <li><a href="cursoJavaScript.html#arrow-function">arrow Function</a></li>
 
         <li><a href="cursoJavaScript.html#map">metodo map() en array</a></li>
@@ -244,8 +247,7 @@
         <li><a href="cursoJavaScript.html#find">metodo find() en array</a></li>
         <li><a href="cursoJavaScript.html#reduce">metodo reduce() en array</a></li>
         <li><a href="cursoJavaScript.html#sort">metodo sort() en array</a></li>
-        <li><a href="cursoJavaScript.html#every">metodo every() compara array, si los elementos del array para la
-                funcion de prueba</a></li>
+        <li><a href="cursoJavaScript.html#every">metodo every() compara array, si los elementos del array para la funcion de prueba</a></li>
         <li><a href="cursoJavaScript.html#some">metodo some() algun elemento array</a></li>
         <li><a href="cursoJavaScript.html#teclado">entrada de datos por teclado</a></li>
         <li><a href="cursoJavaScript.html#desectucturar">desectructurar objetos</a></li>
@@ -260,8 +262,7 @@
         <li><a href="cursoJavaScript.html#QuerySelector">Query Selector y Query Selector All</a></li>
         <li><a href="cursoJavaScript.html#typescript-instalacion">TypeScrip Instalacion</a></li>
         <li><a href="cursoJavaScript.html#genericos">TypeScrip Tipos Genericos</a></li>
-        <li><a href="cursoJavaScript.html#genericos-herencias">TypeScrip Genericos Aplicados a clases abstractas y
-                Herencias</a></li>
+        <li><a href="cursoJavaScript.html#genericos-herencias">TypeScrip Genericos Aplicados a clases abstractas y  Herencias</a></li>
 
     </ul>
 
@@ -831,6 +832,29 @@
 
     <a href="cursoJavaScript.html">⏫</a>
     <hr>
+    <h2 id="condicionales">condicionales </h2>
+    <article>
+        Los condicionales es cuando se evalua algo si es verdadero ejecuta y accion y si es falso ejecuta otra accion. <br>
+        <pre>
+            <code>
+                const edad = 27;
+                if (edad > 18) {
+                    console.log(`es mayor de edad`);
+                } else {
+                    console.log(`es menor de edad`);
+                }
+                
+                //operador ternario
+                
+                const valor= edad > 18 ? "mayor de edad": "menor de edad";
+                console.log(valor);
+                
+            </code>
+        </pre>
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
     <h2 id="ciclos">ciclos </h2>
     <article>
         existen ciclos <strong>for</strong>, cuando sabemos
@@ -1319,6 +1343,35 @@
     <article>
         JavaScript es un lenguaje basado en prototipos, por lo tanto entender el objeto <strong>prototype</strong>
         es uno de los conceptos más importantes que los profesionales de JavaScript necesitan saber.
+    </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="funciones">funciones</h2>
+    <article>
+        una funciones es un bloque de codito reutilizable, que puede recibir parametros, y retorna un resultado. <br>
+        se ejecuta cuando la invoca. <br>
+        <pre>
+            <code>
+                function sumar(a, b) {
+                    return a + b
+                }
+                
+                //invocamos la funcion
+                resultado = sumar(2, 3);
+                console.log(resultado);
+                
+                //funcion expresada o anonima
+                const funcionExpresion = function () {
+                    console.log("funcion anonima, no se conoce el nombre de la funcion ni el valor de las variables");
+                }
+                
+                //invocamos la funcion
+                funcionExpresion();
+
+
+            </code>
+        </pre>
     </article>
 
     <a href="cursoJavaScript.html">⏫</a>
