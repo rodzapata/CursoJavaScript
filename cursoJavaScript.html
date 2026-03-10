@@ -256,13 +256,18 @@
         <li><a href="cursoJavaScript.html#propagacion">operador de propagacion</a></li>
         <li><a href="cursoJavaScript.html#promesas">promesas</a></li>
         <li><a href="cursoJavaScript.html#errores">manejo de erroes</a></li>
+        <li><a href="cursoJavaScript.html#depurar">depurar con visual studio code</a></li>
+
         <li><a href="cursoJavaScript.html#log">Log en nodeJS</a></li>
         <li><a href="cursoJavaScript.html#modulos">modulos en nodeJS</a></li>
         <li><a href="cursoJavaScript.html#ESlint">ESLint</a></li>
         <li><a href="cursoJavaScript.html#QuerySelector">Query Selector y Query Selector All</a></li>
+        <li><a href="cursoJavaScript.html#persistencia-javascript">persistencia de datos en Javascript</a></li>
+
         <li><a href="cursoJavaScript.html#typescript-instalacion">TypeScrip Instalacion</a></li>
         <li><a href="cursoJavaScript.html#genericos">TypeScrip Tipos Genericos</a></li>
         <li><a href="cursoJavaScript.html#genericos-herencias">TypeScrip Genericos Aplicados a clases abstractas y  Herencias</a></li>
+        <li><a href="cursoJavaScript.html#eslint">ESlint convenciones</a></li>
 
     </ul>
 
@@ -283,7 +288,9 @@
         curso de JavaScript por Carlos <a href="https://www.youtube.com/watch?v=S9ojNaeC1RI&t=2170s">Carlos </a>
         <br><br>
         Esta pagina muestra ejercicios de Javascripts <a
-            href="https://www.tutorialesprogramacionya.com/">JavascriptYa</a>
+            href="https://www.tutorialesprogramacionya.com/">JavascriptYa</a> <br>
+        curso de javascript <a href="https://www.youtube.com/watch?v=8OwZHiQBGBA&list=PLkVpKYNT_U9c0tO6p77Kn_LTx-hLhCDsY&index=1" target="_blank" rel="noopener noreferrer">Javascript por Open Bootcamp</a><br><br>
+        curso de typescript <a href="https://www.youtube.com/watch?v=RI7j5bicTEw&list=PLkVpKYNT_U9egW5padLMHmnTPb6xm4hLf" target="_blank" rel="noopener noreferrer">open bootcampt typescript</a>  <br>
     </article>
 
     <a href="cursoJavaScript.html">⏫</a>
@@ -2468,6 +2475,39 @@
         </pre>
     </article>
 
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="depurar">depurar con visual studio code</h2>
+    <article>
+        por ejemplo creo el archivo depurar.js con el siguiente codigo:
+        <pre>
+            <code>
+                const persona = {
+                    "nombre": "rodney",
+                    "apellido": "zapata",
+                    "edad": 50
+                }
+                
+                console.log(persona)
+                
+                function duplicarEdad(edad) {
+                    return edad * 2
+                }
+                
+                const dobleEdad = duplicarEdad(persona.edad);
+                console.log(dobleEdad);
+                
+            </code>
+        </pre>
+        para no estar colocando los console.log() por cada variable que quiero revisar se <br><br>
+        presionames Ctrl + Shif + D , que es la herramienta que aparce en la barra lateral. 
+
+
+    </article>
+
+
+
     <a href="cursoJavaScript.html">⏫</a>
     <hr>
     <h2 id="log">log en nodeJS</h2>
@@ -2666,7 +2706,62 @@
             </code>
         </pre>
     </article>
-    <!-- Comentario en html -->
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="persistencia-javascript">persistencia de datos en Javascript</h2>
+    <article>
+        La persistencia de datos en JavaScript significa guardar información para que no se pierda cuando se recarga la página o se cierra la aplicación. <br>
+        <strong>1. LocalStorage (persistencia en el navegador) </strong><br>
+
+        Es la forma más simple. Los datos quedan guardados en el navegador del usuario incluso después de cerrar la pagina <br>
+        creamos el archivo persistencia.js con el siguiente codigo
+        <pre>
+            <code>
+                //gudarda datos
+                localStorage.setItem("usuario", "rodney");
+                
+                //obtener datos
+                const datos = localStorage.getItem("usuario");
+                console.log(datos);
+                
+                //eliminamos el datos
+                localStorage.removeItem("usuario");
+                
+            </code>
+        </pre>
+        <strong>Nota</strong> <br>
+        solo guarda string y maximo 5 megas <br>
+        ahora guardaremos un ojeto persona <br>
+        <pre>
+            <code>
+                //GUARDAMOS OBJETO PERSONA 
+                const user = {
+                    "name": "rodney",
+                    "lastName": "zapata",
+                    "age": 51
+                }
+                
+                //guardamos el objeto 
+                localStorage.setItem("user", JSON.stringify(user));
+                
+                //obtemos el dato
+                const datoUser = JSON.parse(localStorage.getItem("user"));
+                console.log(datoUser);
+                
+            </code>
+        </pre>
+        <strong>2. IndexedDB (base de datos en el navegador)</strong> <br>
+
+        Es una base de datos completa dentro del navegador.Esto es muy usado en apps offline o PWA. <br>
+        <pre>
+            <code>
+
+                
+            </code>
+        </pre>
+
+    </article>
 
 
     <a href="cursoJavaScript.html">⏫</a>
@@ -2868,6 +2963,26 @@
     <article>
 
     </article>
+
+    <a href="cursoJavaScript.html">⏫</a>
+    <hr>
+    <h2 id="eslint">ESlint convenciones</h2>
+
+    <article>
+        ESLint es una herramienta que revisa tu codigo de javascript, te muestra los errores segun las convenciones 
+        y buenas practicas. <br><br>
+        Desde visual estudio code instalamos las extensiones ESLint  y la extension Error Lens <br>
+        la primera valida los errores de escritura y las regunda resalta los erroes a medida que escribes <br><br>
+
+        instalacion con NPM <br>
+        <pre>
+            <code>
+
+            </code>
+        </pre>
+
+    </article>
+
 
 
 </body>
