@@ -2751,7 +2751,25 @@
                 
             </code>
         </pre>
-        <strong>2. IndexedDB (base de datos en el navegador)</strong> <br>
+
+        <strong>2. cookies</strong> <br>
+        por lo general se acostumbra en aplicaciones javascript vanila se usa <br>
+        <pre>
+            <code>
+                npm install cookies
+            </code>
+        </pre>
+        pero en aplicaciones modernas con framework, ya esto lo gestiona internamente, por ejemplo
+        nestJS usa cookie-parser, acompañado de JWT y password encriptado. <br>
+        este patron se conoce como httpOnly <br>
+        se intala de la siguiente forma: <br>
+        <pre>
+            <code>
+                npm install @nestjs/jwt @nestjs/passport passport passport-jwt cookie-parser
+            </code>
+        </pre> 
+
+        <strong>3. IndexedDB (base de datos en el navegador)</strong> <br>
 
         Es una base de datos completa dentro del navegador.Esto es muy usado en apps offline o PWA. <br>
         <pre>
